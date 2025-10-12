@@ -1,59 +1,38 @@
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+    <section id="hero" className="relative min-h-[70vh] flex items-center">
+      {/* Concrete background (inherits from App) + subtle vignette to mimic shop lighting */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          transform: `translateY(${scrollY * 0.5}px)`,
+          background: "radial-gradient(100% 60% at 50% 0%, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.0) 60%)",
         }}
-      >
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }}></div>
-      </div>
+      />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-          <Button onClick={() => scrollToSection("contact")} size="lg" className="bg-sandstone hover:bg-neon-blue shadow-gold hover:shadow-neon-blue">
-            Book a Cut
-          </Button>
-          <Button onClick={() => scrollToSection("about")} size="lg" variant="outline" className="border-sandstone text-sandstone hover:border-neon-blue hover:text-neon-blue hover:bg-neon-blue/10">
-            Explore the Lounge
-          </Button>
+      <div className="container mx-auto px-4 relative z-10 py-24 md:py-32">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-heading font-bold leading-tight text-foreground">
+            Sharp Style. <span className="text-[hsl(var(--primary))]">Confident Cuts.</span>
+          </h1>
+
+          <p className="mt-5 text-lg md:text-xl text-foreground/80">
+            Precision grooming in a lounge built for modern men — inspired by concrete textures, warm ambient lighting,
+            and the signature ONYX neon glow.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Button className="btn-primary-onyx">Book a Cut</Button>
+            <Button variant="outline" className="btn-outline-onyx">
+              View Services
+            </Button>
+          </div>
+
+          {/* Optional: small visual cue in gold → blue on hover */}
+          <div className="mt-10 h-[2px] w-32 bg-[hsl(var(--primary))] transition-colors duration-300 hover:bg-[hsl(var(--neon-blue))]" />
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <button
-        onClick={() => scrollToSection("about")}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-sandstone gold-glow hover:text-neon-blue hover:neon-glow-subtle animate-bounce hover:scale-110 transition-all duration-300"
-      >
-        <ChevronDown size={32} />
-      </button>
     </section>
   );
 };
