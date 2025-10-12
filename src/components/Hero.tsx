@@ -43,7 +43,7 @@ const Hero = () => {
           <img 
             src={onyxLogo} 
             alt="ONYX Barber Lounge" 
-            className="w-64 sm:w-80 md:w-96 mx-auto transition-all duration-500 gold-glow hover:neon-glow-subtle"
+            className="w-[32rem] sm:w-[40rem] md:w-[48rem] mx-auto transition-all duration-500 gold-glow hover:neon-glow-subtle"
             style={{ 
               mixBlendMode: 'screen',
               filter: 'brightness(1.2) contrast(1.1)'
