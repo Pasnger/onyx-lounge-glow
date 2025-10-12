@@ -7,17 +7,15 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
     }
   };
@@ -30,51 +28,59 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <button 
+          {/* Brand */}
+          <button
             onClick={() => scrollToSection("about")}
             className="text-2xl font-heading font-bold tracking-tight group"
+            aria-label="Onyx Barber Lounge - back to top"
           >
-            <span className="text-foreground group-hover:neon-glow-subtle transition-all duration-300">ONYX</span>{" "}
-            <span className="text-sandstone">BARBER</span>
+            <span
+              className="
+                text-white
+                transition-all duration-300
+                drop-shadow-[0_0_4px_rgba(41,102,255,0.25)]
+                group-hover:text-[#2966FF]
+                group-hover:drop-shadow-[0_0_12px_rgba(41,102,255,0.9)]
+              "
+            >
+              Onyx Barber Lounge
+            </span>
           </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-neon-blue transition-colors font-medium"
+              className="text-foreground hover:text-[#2966FF] transition-colors font-medium"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-foreground hover:text-neon-blue transition-colors font-medium"
+              className="text-foreground hover:text-[#2966FF] transition-colors font-medium"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("gallery")}
-              className="text-foreground hover:text-neon-blue transition-colors font-medium"
+              className="text-foreground hover:text-[#2966FF] transition-colors font-medium"
             >
               Gallery
             </button>
             <button
               onClick={() => scrollToSection("location")}
-              className="text-foreground hover:text-neon-blue transition-colors font-medium"
+              className="text-foreground hover:text-[#2966FF] transition-colors font-medium"
             >
               Location
             </button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-            >
-              Book Now
-            </Button>
+            <Button onClick={() => scrollToSection("contact")}>Book Now</Button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -85,32 +91,29 @@ const Header = () => {
           <nav className="md:hidden pb-6 space-y-4 animate-fade-in">
             <button
               onClick={() => scrollToSection("about")}
-              className="block w-full text-left text-foreground hover:text-neon-blue transition-colors font-medium py-2"
+              className="block w-full text-left text-foreground hover:text-[#2966FF] transition-colors font-medium py-2"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="block w-full text-left text-foreground hover:text-neon-blue transition-colors font-medium py-2"
+              className="block w-full text-left text-foreground hover:text-[#2966FF] transition-colors font-medium py-2"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("gallery")}
-              className="block w-full text-left text-foreground hover:text-neon-blue transition-colors font-medium py-2"
+              className="block w-full text-left text-foreground hover:text-[#2966FF] transition-colors font-medium py-2"
             >
               Gallery
             </button>
             <button
               onClick={() => scrollToSection("location")}
-              className="block w-full text-left text-foreground hover:text-neon-blue transition-colors font-medium py-2"
+              className="block w-full text-left text-foreground hover:text-[#2966FF] transition-colors font-medium py-2"
             >
               Location
             </button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="w-full"
-            >
+            <Button onClick={() => scrollToSection("contact")} className="w-full">
               Book Now
             </Button>
           </nav>
