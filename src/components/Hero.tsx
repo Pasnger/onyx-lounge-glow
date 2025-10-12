@@ -29,40 +29,19 @@ const Hero = () => {
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
       >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0" style={{ background: 'var(--gradient-hero-overlay)' }}></div>
+        <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }}></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 animate-fade-in">
-          <span className="neon-glow">ONYX</span>
-          <br />
-          <span className="text-sandstone gold-glow">Confident Cuts.</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-concrete-light mb-12 animate-slide-up font-light">
-          Experience precision grooming in a space built for modern men.
-        </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-          <Button
-            onClick={() => scrollToSection("contact")}
-            size="lg"
-          >
+          <Button onClick={() => scrollToSection("contact")} size="lg">
             Book a Cut
           </Button>
-          <Button
-            onClick={() => scrollToSection("about")}
-            size="lg"
-            variant="outline"
-          >
+          <Button onClick={() => scrollToSection("about")} size="lg" variant="outline">
             Explore the Lounge
           </Button>
         </div>
