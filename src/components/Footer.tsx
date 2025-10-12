@@ -10,21 +10,20 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-charcoal border-t border-amber/20">
+    <footer id="contact" className="section-gradient border-t border-neon-blue/20">
       {/* CTA Section */}
-      <div className="py-20 bg-gradient-to-b from-onyx to-charcoal">
+      <div className="py-20 bg-gradient-to-b from-onyx to-concrete">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Step into <span className="text-amber">Style</span>.
+            Step into <span className="text-sandstone gold-glow">Style</span>.
             <br />
-            Step into <span className="text-amber">Onyx</span>.
+            Step into <span className="neon-glow">Onyx</span>.
           </h2>
-          <p className="text-xl text-beige mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-concrete-light mb-8 max-w-2xl mx-auto">
             Book your next cut and experience precision grooming in South Australia's premier barber lounge
           </p>
           <Button
             size="lg"
-            className="bg-amber text-onyx hover:bg-amber/90 hover:shadow-gold transition-all duration-300 font-semibold text-lg px-12 py-6"
           >
             Book Your Next Cut
           </Button>
@@ -39,38 +38,38 @@ const Footer = () => {
             <div>
               <h3 className="text-2xl font-heading font-bold mb-4">
                 <span className="text-foreground">ONYX</span>{" "}
-                <span className="text-amber">BARBER</span>
+                <span className="text-sandstone">BARBER</span>
               </h3>
-              <p className="text-beige">
+              <p className="text-concrete-light">
                 Premium grooming for the modern man.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-heading font-semibold mb-4 text-amber">Quick Links</h4>
+              <h4 className="font-heading font-semibold mb-4 text-neon-blue neon-glow-subtle">Quick Links</h4>
               <div className="space-y-2">
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="block text-beige hover:text-amber transition-colors"
+                  className="block text-concrete-light hover:text-neon-blue transition-colors"
                 >
                   About
                 </button>
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="block text-beige hover:text-amber transition-colors"
+                  className="block text-concrete-light hover:text-neon-blue transition-colors"
                 >
                   Services
                 </button>
                 <button
                   onClick={() => scrollToSection("gallery")}
-                  className="block text-beige hover:text-amber transition-colors"
+                  className="block text-concrete-light hover:text-neon-blue transition-colors"
                 >
                   Gallery
                 </button>
                 <button
                   onClick={() => scrollToSection("location")}
-                  className="block text-beige hover:text-amber transition-colors"
+                  className="block text-concrete-light hover:text-neon-blue transition-colors"
                 >
                   Location
                 </button>
@@ -79,9 +78,9 @@ const Footer = () => {
 
             {/* Contact & Social */}
             <div>
-              <h4 className="font-heading font-semibold mb-4 text-amber">Connect With Us</h4>
+              <h4 className="font-heading font-semibold mb-4 text-neon-blue neon-glow-subtle">Connect With Us</h4>
               <div className="space-y-3">
-                <p className="text-beige">
+                <p className="text-concrete-light">
                   Shop 1/723-725 Lower North East Rd
                   <br />
                   Paradise SA 5075
@@ -91,7 +90,7 @@ const Footer = () => {
                     href="https://www.instagram.com/onyx_barberlounge/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-amber/10 hover:bg-amber hover:text-onyx rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-gold"
+                    className="w-10 h-10 bg-neon-blue/10 hover:bg-neon-blue hover:text-onyx rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-neon-blue-strong"
                   >
                     <Instagram size={20} />
                   </a>
@@ -99,7 +98,7 @@ const Footer = () => {
                     href="https://www.tiktok.com/@onyx_barberlounge"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-amber/10 hover:bg-amber hover:text-onyx rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-gold"
+                    className="w-10 h-10 bg-neon-blue/10 hover:bg-neon-blue hover:text-onyx rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-neon-blue-strong"
                   >
                     <TikTokIcon />
                   </a>
@@ -109,7 +108,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="pt-8 border-t border-amber/20 text-center text-beige">
+          <div className="pt-8 border-t border-neon-blue/20 text-center text-concrete-light">
             <p>© 2025 Onyx Barber Lounge. All rights reserved.</p>
           </div>
         </div>

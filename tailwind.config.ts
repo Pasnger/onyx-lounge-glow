@@ -48,10 +48,11 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         onyx: "hsl(var(--onyx-black))",
-        charcoal: "hsl(var(--charcoal))",
+        concrete: "hsl(var(--concrete))",
+        "concrete-light": "hsl(var(--concrete-light))",
+        "neon-blue": "hsl(var(--neon-blue))",
         sandstone: "hsl(var(--sandstone))",
-        beige: "hsl(var(--beige))",
-        amber: "hsl(var(--amber))",
+        "sandstone-secondary": "hsl(var(--sandstone-secondary))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -73,8 +74,12 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        'gold': '0 0 40px hsl(42 69% 65% / 0.3)',
+        'gold': '0 0 40px hsl(42 58% 55% / 0.4)',
         'soft': '0 10px 30px -10px hsl(0 0% 0% / 0.5)',
+        'neon-blue': '0 0 30px hsl(200 100% 50% / 0.6)',
+        'neon-blue-strong': '0 0 50px hsl(200 100% 50% / 0.8), 0 0 80px hsl(200 100% 50% / 0.4)',
+        'inner-dark': 'inset 0 2px 15px hsl(0 0% 0% / 0.5)',
+        'soft-dark': '0 10px 40px -10px hsl(0 0% 0% / 0.7)',
       },
       keyframes: {
         "accordion-down": {

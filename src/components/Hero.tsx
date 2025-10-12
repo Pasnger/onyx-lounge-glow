@@ -38,24 +38,23 @@ const Hero = () => {
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-onyx/70 via-onyx/50 to-onyx"></div>
+        <div className="absolute inset-0" style={{ background: 'var(--gradient-hero-overlay)' }}></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 animate-fade-in">
-          <span className="text-foreground">Sharp Style.</span>
+          <span className="neon-glow">ONYX</span>
           <br />
-          <span className="text-amber gold-glow">Confident Cuts.</span>
+          <span className="text-sandstone gold-glow">Confident Cuts.</span>
         </h1>
-        <p className="text-xl md:text-2xl text-beige mb-12 animate-slide-up font-light">
+        <p className="text-xl md:text-2xl text-concrete-light mb-12 animate-slide-up font-light">
           Experience precision grooming in a space built for modern men.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
           <Button
             onClick={() => scrollToSection("contact")}
             size="lg"
-            className="bg-amber text-onyx hover:bg-amber/90 hover:shadow-gold transition-all duration-300 font-semibold text-lg px-8 py-6"
           >
             Book a Cut
           </Button>
@@ -63,7 +62,6 @@ const Hero = () => {
             onClick={() => scrollToSection("about")}
             size="lg"
             variant="outline"
-            className="border-2 border-amber text-amber hover:bg-amber hover:text-onyx transition-all duration-300 font-semibold text-lg px-8 py-6"
           >
             Explore the Lounge
           </Button>
@@ -73,7 +71,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <button
         onClick={() => scrollToSection("about")}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-amber animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-neon-blue neon-glow-subtle animate-bounce hover:scale-110 transition-transform"
       >
         <ChevronDown size={32} />
       </button>
