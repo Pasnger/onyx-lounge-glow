@@ -46,7 +46,7 @@ const Hero = () => {
             className="w-64 sm:w-80 md:w-96 mx-auto transition-all duration-500 gold-glow hover:neon-glow-subtle"
             style={{ 
               mixBlendMode: 'screen',
-              filter: 'brightness(1.5) contrast(1.2) invert(1)'
+              filter: 'brightness(1.2) contrast(1.1)'
             }}
           />
         </div>
