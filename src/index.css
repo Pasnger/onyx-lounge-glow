@@ -3,103 +3,93 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== THEME: Concrete (#8f989b) base + Neon Blue accent =====
-   #8f989b ≈ hsl(195, 6%, 58%)
-*/
+/* ===== THEME: Concrete base + Neon Blue accent ===== */
 @layer base {
   :root {
-    /* Base surfaces (light concrete look) */
-    --background: 195 6% 58%; /* <- your #8f989b as HSL */
-    --foreground: 0 0% 8%; /* near-black for strong contrast */
+    /* Surfaces (concrete look) */
+    --background: 0 0% 10%; /* page bg (charcoal) */
+    --foreground: 0 0% 100%;
 
-    --card: 195 6% 96%; /* light cards on concrete */
-    --card-foreground: 0 0% 8%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 195 6% 95%;
-    --popover-foreground: 0 0% 8%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 100%;
 
     /* Primary = ONYX neon blue */
-    --primary: 220 100% 56%; /* ~#2966FF */
+    --primary: 220 100% 60%; /* ~#2966FF–#3366FF */
     --primary-foreground: 0 0% 100%;
 
-    /* Muted greys (cool) */
-    --secondary: 195 6% 52%;
-    --secondary-foreground: 0 0% 10%;
+    /* Greys for structure */
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 195 6% 50%;
-    --muted-foreground: 0 0% 15%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 85%;
 
-    --accent: 195 6% 44%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 45%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 195 6% 46%;
-    --input: 195 6% 46%;
-    --ring: 220 100% 56%;
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 220 100% 60%;
 
     --radius: 0.5rem;
 
-    /* Brand aliases used in components */
-    --neon-blue: 220 100% 56%;
-    --concrete-base: 195 6% 58%; /* #8f989b */
-    --concrete-dark: 195 6% 46%;
-    --concrete-light: 195 6% 88%;
+    /* Brand aliases (in case classes reference these) */
+    --onyx-black: 0 0% 5%;
+    --concrete: 0 0% 14%;
+    --concrete-light: 0 0% 80%;
+    --neon-blue: 220 100% 60%;
 
-    /* If any old code references "sandstone", keep it neutral to avoid yellow/blue clash */
-    --sandstone: 35 4% 60%;
-    --sandstone-secondary: 35 4% 70%;
+    /* Keep “sandstone” as a neutral warm grey so nothing looks yellow */
+    --sandstone: 35 6% 52%;
+    --sandstone-secondary: 35 6% 60%;
   }
 
+  /* Base body styling */
   body {
-    color: hsl(var(--foreground));
+    @apply text-foreground;
     background-color: hsl(var(--background));
   }
 }
 
-/* ===== Utilities: Concrete texture + Neon helpers ===== */
+/* ===== Utilities: Concrete texture + Neon glow ===== */
 @layer utilities {
-  /* Concrete texture (no images) tuned to #8f989b */
-  .bg-concrete-onyx {
+  /* Mottled concrete without external images */
+  .bg-concrete {
     position: relative;
     background:
-      /* soft mottling highlights */
-      radial-gradient(60% 80% at 20% 10%, hsl(0 0% 100% / 0.09), transparent 60%),
-      radial-gradient(80% 60% at 90% 25%, hsl(0 0% 100% / 0.05), transparent 50%),
-      radial-gradient(50% 70% at 0% 90%, hsl(0 0% 0% / 0.06), transparent 55%),
-      /* base concrete gradient (slight vertical shift) */
-        linear-gradient(
-          180deg,
-          hsl(var(--concrete-light)) 0%,
-          hsl(var(--concrete-base)) 45%,
-          hsl(var(--concrete-dark)) 100%
-        );
+      radial-gradient(60% 80% at 20% 10%, hsl(0 0% 100% / 0.02), transparent 60%),
+      radial-gradient(80% 60% at 90% 20%, hsl(0 0% 0% / 0.05), transparent 50%),
+      radial-gradient(50% 70% at 0% 90%, hsl(0 0% 100% / 0.02), transparent 55%),
+      linear-gradient(180deg, hsl(0 0% 14%), hsl(0 0% 10%));
   }
-  .bg-concrete-onyx::after {
-    /* fine noise speckle */
+  .bg-concrete::after {
     content: "";
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(1px 1px at 15% 20%, hsl(0 0% 0% / 0.06) 0, transparent 100%),
-      radial-gradient(1px 1px at 40% 35%, hsl(0 0% 100% / 0.05) 0, transparent 100%),
-      radial-gradient(1px 1px at 70% 65%, hsl(0 0% 0% / 0.05) 0, transparent 100%),
-      radial-gradient(1px 1px at 85% 80%, hsl(0 0% 100% / 0.04) 0, transparent 100%);
+      radial-gradient(1px 1px at 25% 20%, hsl(0 0% 100% / 0.03) 0, transparent 100%),
+      radial-gradient(1px 1px at 60% 40%, hsl(0 0% 0% / 0.04) 0, transparent 100%),
+      radial-gradient(1px 1px at 80% 70%, hsl(0 0% 100% / 0.02) 0, transparent 100%);
     mix-blend-mode: overlay;
     pointer-events: none;
   }
 
-  /* Neon text glow helper (blue) */
+  /* Neon text glow helper */
   .neon {
     text-shadow:
-      0 0 6px hsl(var(--neon-blue) / 0.55),
-      0 0 16px hsl(var(--neon-blue) / 0.4),
-      0 0 28px hsl(var(--neon-blue) / 0.3);
+      0 0 6px hsl(var(--neon-blue) / 0.6),
+      0 0 16px hsl(var(--neon-blue) / 0.45),
+      0 0 28px hsl(var(--neon-blue) / 0.35);
   }
 }
 
-/* Accessible focus ring matching neon blue */
+/* Optional: subtle focus ring that matches neon blue */
 @layer base {
   :focus-visible {
     outline: 2px solid hsl(var(--ring));

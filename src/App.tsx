@@ -12,13 +12,16 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      {/* Portals */}
       <Toaster />
       <Sonner />
-      {/* Apply the light-concrete background and dark text globally */}
-      <div className="min-h-screen bg-concrete-onyx text-foreground">
+
+      {/* Global concrete background + text color */}
+      <div className="min-h-screen bg-concrete text-foreground">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
