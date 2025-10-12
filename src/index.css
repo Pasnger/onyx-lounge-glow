@@ -3,10 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== THEME: Concrete base + Neon Blue accent ===== */
 @layer base {
   :root {
-    /* --- Core surfaces (concrete look) --- */
-    --background: 0 0% 10%; /* deep charcoal */
+    /* Surfaces (concrete look) */
+    --background: 0 0% 10%; /* page bg (charcoal) */
     --foreground: 0 0% 100%;
 
     --card: 0 0% 12%;
@@ -15,11 +16,11 @@
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 100%;
 
-    /* --- Primary = ONYX neon blue --- */
-    --primary: 220 100% 60%; /* ~#3366FF (matches sign glow) */
+    /* Primary = ONYX neon blue */
+    --primary: 220 100% 60%; /* ~#2966FF–#3366FF */
     --primary-foreground: 0 0% 100%;
 
-    /* --- Secondary/Muted are just darker greys --- */
+    /* Greys for structure */
     --secondary: 0 0% 16%;
     --secondary-foreground: 0 0% 100%;
 
@@ -38,42 +39,45 @@
 
     --radius: 0.5rem;
 
-    /* --- Brand aliases (keep tokens used in your code) --- */
+    /* Brand aliases (in case classes reference these) */
     --onyx-black: 0 0% 5%;
     --concrete: 0 0% 14%;
     --concrete-light: 0 0% 80%;
     --neon-blue: 220 100% 60%;
 
-    /* De-emphasise sandstone: set to a neutral warm grey so it never clashes */
-    --sandstone: 35 10% 55%; /* subtle warm grey, NOT yellow */
-    --sandstone-secondary: 35 8% 62%;
+    /* Keep “sandstone” as a neutral warm grey so nothing looks yellow */
+    --sandstone: 35 6% 52%;
+    --sandstone-secondary: 35 6% 60%;
+  }
 
-    /* Gradients to mimic real lighting */
-    --gradient-hero-overlay: linear-gradient(180deg, hsl(0 0% 6% / 0.85) 0%, hsl(0 0% 12% / 0.9) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 8%) 0%, hsl(0 0% 14%) 100%);
+  /* Base body styling */
+  body {
+    @apply text-foreground;
+    background-color: hsl(var(--background));
   }
 }
-/* Add to the bottom of src/index.css */
+
+/* ===== Utilities: Concrete texture + Neon glow ===== */
 @layer utilities {
+  /* Mottled concrete without external images */
   .bg-concrete {
+    position: relative;
     background:
       radial-gradient(60% 80% at 20% 10%, hsl(0 0% 100% / 0.02), transparent 60%),
       radial-gradient(80% 60% at 90% 20%, hsl(0 0% 0% / 0.05), transparent 50%),
       radial-gradient(50% 70% at 0% 90%, hsl(0 0% 100% / 0.02), transparent 55%),
       linear-gradient(180deg, hsl(0 0% 14%), hsl(0 0% 10%));
-    position: relative;
   }
   .bg-concrete::after {
     content: "";
     position: absolute;
     inset: 0;
-    /* ultra-subtle noise */
     background-image:
       radial-gradient(1px 1px at 25% 20%, hsl(0 0% 100% / 0.03) 0, transparent 100%),
       radial-gradient(1px 1px at 60% 40%, hsl(0 0% 0% / 0.04) 0, transparent 100%),
       radial-gradient(1px 1px at 80% 70%, hsl(0 0% 100% / 0.02) 0, transparent 100%);
-    pointer-events: none;
     mix-blend-mode: overlay;
+    pointer-events: none;
   }
 
   /* Neon text glow helper */
@@ -82,5 +86,13 @@
       0 0 6px hsl(var(--neon-blue) / 0.6),
       0 0 16px hsl(var(--neon-blue) / 0.45),
       0 0 28px hsl(var(--neon-blue) / 0.35);
+  }
+}
+
+/* Optional: subtle focus ring that matches neon blue */
+@layer base {
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 }
