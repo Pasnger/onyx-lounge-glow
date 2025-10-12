@@ -1,228 +1,55 @@
+/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    /* Light Concrete Theme */
-    --background: 0 0% 73%;
-    --foreground: 0 0% 15%;
-
-    --card: 0 0% 70%;
-    --card-foreground: 0 0% 15%;
-
-    --popover: 0 0% 70%;
-    --popover-foreground: 0 0% 15%;
-
-    --primary: 42 58% 55%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 200 100% 50%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 0% 78%;
-    --muted-foreground: 0 0% 35%;
-
-    --accent: 200 100% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 60%;
-    --input: 0 0% 60%;
-    --ring: 200 100% 50%;
-
-    --radius: 0.5rem;
-    
-    /* Custom Colors */
-    --onyx-black: 0 0% 15%;
-    --concrete: 0 0% 73%;
-    --concrete-medium: 0 0% 55%;
-    --concrete-light: 0 0% 85%;
-    --neon-blue: 200 100% 50%;
-    --sandstone: 42 58% 55%;
-    --sandstone-secondary: 39 40% 67%;
-    
-    /* Gradients */
-    --gradient-hero-overlay: linear-gradient(180deg, hsl(0 0% 73% / 0.3) 0%, hsl(0 0% 68% / 0.5) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 78%) 0%, hsl(0 0% 68%) 100%);
-    --gradient-concrete: linear-gradient(135deg, hsl(0 0% 73%) 0%, hsl(0 0% 68%) 100%);
-    --glow-mirror: radial-gradient(circle at center, hsl(42 58% 55% / 0.2) 0%, transparent 70%);
-    
-    /* Glows & Shadows */
-    --glow-gold: 0 0 40px hsl(42 58% 55% / 0.4);
-    --glow-neon-blue: 0 0 30px hsl(200 100% 50% / 0.6);
-    --glow-neon-blue-strong: 0 0 50px hsl(200 100% 50% / 0.8), 0 0 80px hsl(200 100% 50% / 0.4);
-    --neon-text-shadow: 0 0 10px hsl(200 100% 50%), 0 0 20px hsl(200 100% 50% / 0.5);
-    --shadow-inner: inset 0 2px 15px hsl(0 0% 0% / 0.15);
-    --shadow-soft: 0 10px 30px -10px hsl(0 0% 0% / 0.2);
-    --shadow-soft-dark: 0 10px 40px -10px hsl(0 0% 0% / 0.3);
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    /* Dark sections (header on scroll, footer) */
-    --background: 0 0% 15%;
+    /* --- Core surfaces (concrete look) --- */
+    --background: 0 0% 10%; /* deep charcoal */
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 20%;
+    --card: 0 0% 12%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 20%;
+    --popover: 0 0% 12%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 42 58% 55%;
+    /* --- Primary = ONYX neon blue --- */
+    --primary: 220 100% 60%; /* ~#3366FF (matches sign glow) */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 100% 50%;
+    /* --- Secondary/Muted are just darker greys --- */
+    --secondary: 0 0% 16%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 25%;
-    --muted-foreground: 0 0% 75%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 85%;
 
-    --accent: 200 100% 50%;
+    --accent: 0 0% 18%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 30%;
-    --input: 0 0% 30%;
-    --ring: 200 100% 50%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 220 100% 60%;
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+    --radius: 0.5rem;
 
-  body {
-    @apply bg-background text-foreground font-body antialiased;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
-  }
-}
+    /* --- Brand aliases (keep tokens used in your code) --- */
+    --onyx-black: 0 0% 5%;
+    --concrete: 0 0% 14%;
+    --concrete-light: 0 0% 80%;
+    --neon-blue: 220 100% 60%;
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-sandstone to-sandstone-secondary bg-clip-text text-transparent;
-  }
-  
-  .gold-glow {
-    text-shadow: var(--glow-gold);
-  }
-  
-  .neon-glow {
-    text-shadow: var(--glow-neon-blue-strong);
-  }
-  
-  .neon-glow-subtle {
-    text-shadow: var(--glow-neon-blue);
-  }
-  
-  .concrete-texture {
-    background: var(--gradient-concrete);
-  }
-  
-  .mirror-glow {
-    position: relative;
-  }
-  
-  .mirror-glow::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--glow-mirror);
-    pointer-events: none;
-  }
-  
-  .section-gradient {
-    background: var(--gradient-section);
-  }
-  
-  /* Gold-to-Blue Hover Transitions */
-  .gold-to-blue-text {
-    @apply text-sandstone gold-glow transition-all duration-300;
-  }
-  
-  .gold-to-blue-text:hover {
-    @apply text-neon-blue neon-glow-subtle;
-  }
-  
-  .gold-to-blue-border {
-    @apply border-sandstone transition-all duration-300;
-  }
-  
-  .gold-to-blue-border:hover {
-    @apply border-neon-blue shadow-neon-blue;
-  }
-  
-  .gold-to-blue-bg {
-    @apply bg-sandstone transition-all duration-300;
-  }
-  
-  .gold-to-blue-bg:hover {
-    @apply bg-neon-blue shadow-neon-blue;
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* De-emphasise sandstone: set to a neutral warm grey so it never clashes */
+    --sandstone: 35 10% 55%; /* subtle warm grey, NOT yellow */
+    --sandstone-secondary: 35 8% 62%;
+
+    /* Gradients to mimic real lighting */
+    --gradient-hero-overlay: linear-gradient(180deg, hsl(0 0% 6% / 0.85) 0%, hsl(0 0% 12% / 0.9) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 8%) 0%, hsl(0 0% 14%) 100%);
   }
 }
