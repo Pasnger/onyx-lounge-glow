@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="py-20 bg-gradient-to-b from-onyx to-concrete">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Step into <span className="text-sandstone gold-glow">Style</span>.
+            Step into <span className="text-neon-blue neon-glow-subtle">Style</span>.
             <br />
             Step into <span className="neon-glow">Onyx</span>.
           </h2>

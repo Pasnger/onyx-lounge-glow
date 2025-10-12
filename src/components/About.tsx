@@ -21,7 +21,7 @@ const About = () => {
               every detail reflects our commitment to excellence. Step into a lounge where craftsmanship 
               meets culture, and leave with confidence in every cut.
             </p>
-            <p className="text-lg text-sandstone font-semibold gold-glow">
+            <p className="text-lg text-neon-blue font-semibold neon-glow-subtle">
               Walk-ins welcome. Style-focused men preferred.
             </p>
           </div>
@@ -41,7 +41,7 @@ const About = () => {
               </div>
             </div>
             {/* Decorative Blue Border */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-sandstone/30 rounded-lg -z-10"></div>
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-neon-blue/30 rounded-lg -z-10"></div>
           </div>
         </div>
       </div>
