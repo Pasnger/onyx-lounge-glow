@@ -3,96 +3,184 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== THEME: Concrete base + Neon Blue accent ===== */
+/* =========================================================
+   THEME: Concrete base + Gold primary (#d6ba6e) → Neon Blue hover
+   - Concrete base color (#8f989b ≈ hsl(195, 6%, 58%)) optional
+   - Primary accent = GOLD (default state)
+   - Hover accent = NEON BLUE
+   ========================================================= */
+
 @layer base {
   :root {
-    /* Surfaces (concrete look) */
-    --background: 0 0% 10%; /* page bg (charcoal) */
-    --foreground: 0 0% 100%;
+    /* --- Base surfaces (optional concrete background) --- */
+    --background: 195 6% 58%; /* #8f989b light concrete */
+    --foreground: 0 0% 8%; /* near-black for readability */
 
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 100%;
+    --card: 195 6% 96%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 195 6% 95%;
+    --popover-foreground: 0 0% 8%;
 
-    /* Primary = ONYX neon blue */
-    --primary: 220 100% 60%; /* ~#2966FF–#3366FF */
-    --primary-foreground: 0 0% 100%;
+    /* --- Primary accent (GOLD) --- */
+    /* #d6ba6e ≈ hsl(45, 56%, 64%) */
+    --primary: 45 56% 64%;
+    --primary-foreground: 0 0% 8%;
 
-    /* Greys for structure */
-    --secondary: 0 0% 16%;
-    --secondary-foreground: 0 0% 100%;
+    /* --- Hover accent (NEON BLUE) --- */
+    /* ~ #2966FF */
+    --neon-blue: 220 100% 56%;
+    --ring: 220 100% 56%;
 
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 85%;
+    /* --- Supporting greys --- */
+    --secondary: 195 6% 52%;
+    --secondary-foreground: 0 0% 10%;
 
-    --accent: 0 0% 18%;
-    --accent-foreground: 0 0% 100%;
+    --muted: 195 6% 50%;
+    --muted-foreground: 0 0% 15%;
 
-    --destructive: 0 84% 60%;
+    --accent: 195 6% 44%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 72% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 22%;
-    --input: 0 0% 22%;
-    --ring: 220 100% 60%;
+    --border: 195 6% 46%;
+    --input: 195 6% 46%;
 
     --radius: 0.5rem;
 
-    /* Brand aliases (in case classes reference these) */
-    --onyx-black: 0 0% 5%;
-    --concrete: 0 0% 14%;
-    --concrete-light: 0 0% 80%;
-    --neon-blue: 220 100% 60%;
+    /* Aliases (safe if older classes reference these) */
+    --concrete-base: 195 6% 58%; /* #8f989b */
+    --concrete-dark: 195 6% 46%;
+    --concrete-light: 195 6% 88%;
 
-    /* Keep “sandstone” as a neutral warm grey so nothing looks yellow */
-    --sandstone: 35 6% 52%;
-    --sandstone-secondary: 35 6% 60%;
+    /* Keep "sandstone" neutral to avoid yellow/blue clash elsewhere */
+    --sandstone: 35 4% 60%;
+    --sandstone-secondary: 35 4% 70%;
   }
 
-  /* Base body styling */
   body {
-    @apply text-foreground;
+    color: hsl(var(--foreground));
     background-color: hsl(var(--background));
+  }
+
+  /* Accessible focus ring matching neon blue */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 }
 
-/* ===== Utilities: Concrete texture + Neon glow ===== */
+/* =========================================================
+   UTILITIES
+   ========================================================= */
 @layer utilities {
-  /* Mottled concrete without external images */
-  .bg-concrete {
+  /* ---------------- Concrete texture (no images) ---------------- */
+  .bg-concrete-onyx {
     position: relative;
     background:
-      radial-gradient(60% 80% at 20% 10%, hsl(0 0% 100% / 0.02), transparent 60%),
-      radial-gradient(80% 60% at 90% 20%, hsl(0 0% 0% / 0.05), transparent 50%),
-      radial-gradient(50% 70% at 0% 90%, hsl(0 0% 100% / 0.02), transparent 55%),
-      linear-gradient(180deg, hsl(0 0% 14%), hsl(0 0% 10%));
+      radial-gradient(60% 80% at 20% 10%, hsl(0 0% 100% / 0.09), transparent 60%),
+      radial-gradient(80% 60% at 90% 25%, hsl(0 0% 100% / 0.05), transparent 50%),
+      radial-gradient(50% 70% at 0% 90%, hsl(0 0% 0% / 0.06), transparent 55%),
+      linear-gradient(
+        180deg,
+        hsl(var(--concrete-light)) 0%,
+        hsl(var(--concrete-base)) 45%,
+        hsl(var(--concrete-dark)) 100%
+      );
   }
-  .bg-concrete::after {
+  .bg-concrete-onyx::after {
+    /* fine noise speckle */
     content: "";
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(1px 1px at 25% 20%, hsl(0 0% 100% / 0.03) 0, transparent 100%),
-      radial-gradient(1px 1px at 60% 40%, hsl(0 0% 0% / 0.04) 0, transparent 100%),
-      radial-gradient(1px 1px at 80% 70%, hsl(0 0% 100% / 0.02) 0, transparent 100%);
+      radial-gradient(1px 1px at 15% 20%, hsl(0 0% 0% / 0.06) 0, transparent 100%),
+      radial-gradient(1px 1px at 40% 35%, hsl(0 0% 100% / 0.05) 0, transparent 100%),
+      radial-gradient(1px 1px at 70% 65%, hsl(0 0% 0% / 0.05) 0, transparent 100%),
+      radial-gradient(1px 1px at 85% 80%, hsl(0 0% 100% / 0.04) 0, transparent 100%);
     mix-blend-mode: overlay;
     pointer-events: none;
   }
 
-  /* Neon text glow helper */
+  /* ---------------- Gold → Neon Blue (Buttons) ---------------- */
+  .btn-primary-onyx {
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-2.5 font-medium transition-all duration-300;
+    background-color: hsl(var(--primary)); /* GOLD base */
+    color: hsl(var(--primary-foreground));
+    border: 1px solid hsl(var(--primary));
+    box-shadow:
+      0 0 0 1px hsl(var(--primary)),
+      0 0 14px rgba(214, 186, 110, 0.35);
+  }
+  .btn-primary-onyx:hover {
+    background-color: hsl(var(--neon-blue)); /* NEON on hover */
+    border-color: hsl(var(--neon-blue));
+    color: #ffffff;
+    box-shadow:
+      0 0 0 1px hsl(var(--neon-blue)),
+      0 0 18px hsl(var(--neon-blue) / 0.7),
+      0 0 36px hsl(var(--neon-blue) / 0.4);
+    transform: translateY(-1px);
+  }
+  .btn-primary-onyx:active {
+    transform: translateY(0);
+    box-shadow:
+      0 0 0 1px hsl(var(--neon-blue)),
+      0 0 12px hsl(var(--neon-blue) / 0.55);
+  }
+
+  /* Outline variant: gold border/text → neon on hover */
+  .btn-outline-onyx {
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-2.5 font-medium transition-all duration-300 bg-transparent;
+    border: 1px solid hsl(var(--primary));
+    color: hsl(var(--primary));
+    box-shadow: 0 0 10px rgba(214, 186, 110, 0.25);
+  }
+  .btn-outline-onyx:hover {
+    border-color: hsl(var(--neon-blue));
+    color: hsl(var(--neon-blue));
+    box-shadow:
+      0 0 12px hsl(var(--neon-blue) / 0.5),
+      0 0 26px hsl(var(--neon-blue) / 0.3);
+  }
+
+  /* ---------------- Links / Text accents ---------------- */
+  .link-onyx {
+    color: hsl(var(--primary)); /* GOLD base */
+    transition:
+      color 200ms,
+      text-shadow 200ms;
+    text-shadow: 0 0 8px rgba(214, 186, 110, 0.25);
+  }
+  .link-onyx:hover {
+    color: hsl(var(--neon-blue)); /* NEON hover */
+    text-shadow:
+      0 0 8px hsl(var(--neon-blue) / 0.6),
+      0 0 18px hsl(var(--neon-blue) / 0.35);
+  }
+
+  /* ---------------- Borders (cards/sections) ---------------- */
+  .border-onyx {
+    border-color: hsl(var(--primary));
+    transition:
+      border-color 200ms,
+      box-shadow 200ms;
+    box-shadow: 0 0 8px rgba(214, 186, 110, 0.2);
+  }
+  .border-onyx:hover {
+    border-color: hsl(var(--neon-blue));
+    box-shadow:
+      0 0 10px hsl(var(--neon-blue) / 0.5),
+      0 0 20px hsl(var(--neon-blue) / 0.3);
+  }
+
+  /* ---------------- Optional Neon Text Glow ---------------- */
   .neon {
     text-shadow:
-      0 0 6px hsl(var(--neon-blue) / 0.6),
-      0 0 16px hsl(var(--neon-blue) / 0.45),
-      0 0 28px hsl(var(--neon-blue) / 0.35);
-  }
-}
-
-/* Optional: subtle focus ring that matches neon blue */
-@layer base {
-  :focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
+      0 0 6px hsl(var(--neon-blue) / 0.55),
+      0 0 16px hsl(var(--neon-blue) / 0.4),
+      0 0 28px hsl(var(--neon-blue) / 0.3);
   }
 }
