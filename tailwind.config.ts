@@ -47,6 +47,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        onyx: "hsl(var(--onyx-black))",
+        charcoal: "hsl(var(--charcoal))",
+        sandstone: "hsl(var(--sandstone))",
+        beige: "hsl(var(--beige))",
+        amber: "hsl(var(--amber))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -58,10 +63,18 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontFamily: {
+        heading: ['Montserrat', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        'gold': '0 0 40px hsl(42 69% 65% / 0.3)',
+        'soft': '0 10px 30px -10px hsl(0 0% 0% / 0.5)',
       },
       keyframes: {
         "accordion-down": {
