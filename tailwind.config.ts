@@ -49,6 +49,7 @@ export default {
         },
         onyx: "hsl(var(--onyx-black))",
         concrete: "hsl(var(--concrete))",
+        "concrete-medium": "hsl(var(--concrete-medium))",
         "concrete-light": "hsl(var(--concrete-light))",
         "neon-blue": "hsl(var(--neon-blue))",
         sandstone: "hsl(var(--sandstone))",

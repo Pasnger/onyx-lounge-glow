@@ -8,23 +8,24 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 24%;
-    --foreground: 0 0% 100%;
+    /* Light Concrete Theme */
+    --background: 0 0% 73%;
+    --foreground: 0 0% 15%;
 
-    --card: 0 0% 24%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 70%;
+    --card-foreground: 0 0% 15%;
 
-    --popover: 0 0% 24%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 70%;
+    --popover-foreground: 0 0% 15%;
 
     --primary: 42 58% 55%;
-    --primary-foreground: 0 0% 5%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 200 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 24%;
-    --muted-foreground: 0 0% 75%;
+    --muted: 0 0% 78%;
+    --muted-foreground: 0 0% 35%;
 
     --accent: 200 100% 50%;
     --accent-foreground: 0 0% 100%;
@@ -32,30 +33,35 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 30%;
-    --input: 0 0% 30%;
+    --border: 0 0% 60%;
+    --input: 0 0% 60%;
     --ring: 200 100% 50%;
 
     --radius: 0.5rem;
     
-    --onyx-black: 0 0% 5%;
-    --concrete: 0 0% 24%;
+    /* Custom Colors */
+    --onyx-black: 0 0% 15%;
+    --concrete: 0 0% 73%;
+    --concrete-medium: 0 0% 55%;
     --concrete-light: 0 0% 85%;
     --neon-blue: 200 100% 50%;
     --sandstone: 42 58% 55%;
     --sandstone-secondary: 39 40% 67%;
     
-    --gradient-hero-overlay: linear-gradient(180deg, hsl(0 0% 5% / 0.7) 0%, hsl(0 0% 24% / 0.9) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 5%) 0%, hsl(0 0% 24%) 100%);
-    --gradient-concrete: linear-gradient(135deg, hsl(0 0% 24%) 0%, hsl(0 0% 28%) 100%);
+    /* Gradients */
+    --gradient-hero-overlay: linear-gradient(180deg, hsl(0 0% 73% / 0.3) 0%, hsl(0 0% 68% / 0.5) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 78%) 0%, hsl(0 0% 68%) 100%);
+    --gradient-concrete: linear-gradient(135deg, hsl(0 0% 73%) 0%, hsl(0 0% 68%) 100%);
     --glow-mirror: radial-gradient(circle at center, hsl(42 58% 55% / 0.2) 0%, transparent 70%);
+    
+    /* Glows & Shadows */
     --glow-gold: 0 0 40px hsl(42 58% 55% / 0.4);
     --glow-neon-blue: 0 0 30px hsl(200 100% 50% / 0.6);
     --glow-neon-blue-strong: 0 0 50px hsl(200 100% 50% / 0.8), 0 0 80px hsl(200 100% 50% / 0.4);
     --neon-text-shadow: 0 0 10px hsl(200 100% 50%), 0 0 20px hsl(200 100% 50% / 0.5);
-    --shadow-inner: inset 0 2px 15px hsl(0 0% 0% / 0.5);
-    --shadow-soft: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
-    --shadow-soft-dark: 0 10px 40px -10px hsl(0 0% 0% / 0.7);
+    --shadow-inner: inset 0 2px 15px hsl(0 0% 0% / 0.15);
+    --shadow-soft: 0 10px 30px -10px hsl(0 0% 0% / 0.2);
+    --shadow-soft-dark: 0 10px 40px -10px hsl(0 0% 0% / 0.3);
 
     --radius: 0.5rem;
 
@@ -77,22 +83,23 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 24%;
+    /* Dark sections (header on scroll, footer) */
+    --background: 0 0% 15%;
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 24%;
+    --card: 0 0% 20%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 24%;
+    --popover: 0 0% 20%;
     --popover-foreground: 0 0% 100%;
 
     --primary: 42 58% 55%;
-    --primary-foreground: 0 0% 5%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 200 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 24%;
+    --muted: 0 0% 25%;
     --muted-foreground: 0 0% 75%;
 
     --accent: 200 100% 50%;
@@ -164,6 +171,31 @@ All colors MUST be HSL.
   
   .section-gradient {
     background: var(--gradient-section);
+  }
+  
+  /* Gold-to-Blue Hover Transitions */
+  .gold-to-blue-text {
+    @apply text-sandstone gold-glow transition-all duration-300;
+  }
+  
+  .gold-to-blue-text:hover {
+    @apply text-neon-blue neon-glow-subtle;
+  }
+  
+  .gold-to-blue-border {
+    @apply border-sandstone transition-all duration-300;
+  }
+  
+  .gold-to-blue-border:hover {
+    @apply border-neon-blue shadow-neon-blue;
+  }
+  
+  .gold-to-blue-bg {
+    @apply bg-sandstone transition-all duration-300;
+  }
+  
+  .gold-to-blue-bg:hover {
+    @apply bg-neon-blue shadow-neon-blue;
   }
   
   .animate-fade-in {

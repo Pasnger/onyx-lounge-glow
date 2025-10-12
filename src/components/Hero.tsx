@@ -38,10 +38,10 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-          <Button onClick={() => scrollToSection("contact")} size="lg">
+          <Button onClick={() => scrollToSection("contact")} size="lg" className="bg-sandstone hover:bg-neon-blue shadow-gold hover:shadow-neon-blue">
             Book a Cut
           </Button>
-          <Button onClick={() => scrollToSection("about")} size="lg" variant="outline">
+          <Button onClick={() => scrollToSection("about")} size="lg" variant="outline" className="border-sandstone text-sandstone hover:border-neon-blue hover:text-neon-blue hover:bg-neon-blue/10">
             Explore the Lounge
           </Button>
         </div>
@@ -50,7 +50,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <button
         onClick={() => scrollToSection("about")}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-neon-blue neon-glow-subtle animate-bounce hover:scale-110 transition-transform"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-sandstone gold-glow hover:text-neon-blue hover:neon-glow-subtle animate-bounce hover:scale-110 transition-all duration-300"
       >
         <ChevronDown size={32} />
       </button>
