@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import onyxLogo from "@/assets/onyx-logo.png";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -36,7 +37,21 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-8">
+        {/* Logo */}
+        <div className="animate-fade-in">
+          <img 
+            src={onyxLogo} 
+            alt="ONYX Barber Lounge" 
+            className="w-64 sm:w-80 md:w-96 mx-auto transition-all duration-500 gold-glow hover:neon-glow-subtle"
+            style={{ 
+              mixBlendMode: 'screen',
+              filter: 'brightness(1.2) contrast(1.1)'
+            }}
+          />
+        </div>
+        
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
           <Button onClick={() => scrollToSection("contact")} size="lg" className="bg-sandstone hover:bg-neon-blue shadow-gold hover:shadow-neon-blue">
             Book a Cut
