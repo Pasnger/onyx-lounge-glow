@@ -23,9 +23,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-[hsl(var(--concrete-dark)/0.85)] backdrop-blur-md border-b border-[hsl(var(--border))]"
-          : "bg-[hsl(0_0%_0%_/0.15)] backdrop-blur-sm"
+        isScrolled ? "bg-[hsl(var(--background)/0.9)] backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -33,7 +31,7 @@ const Header = () => {
           {/* Brand */}
           <button
             onClick={() => scrollToSection("about")}
-            className="group text-2xl font-heading font-bold tracking-tight"
+            className="text-2xl font-heading font-bold tracking-tight group"
             aria-label="Onyx Barber Lounge - back to top"
           >
             <span
@@ -56,13 +54,15 @@ const Header = () => {
               { id: "gallery", label: "Gallery" },
               { id: "location", label: "Location" },
             ].map((item) => (
-              <button key={item.id} onClick={() => scrollToSection(item.id)} className="link-onyx font-medium">
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="text-foreground/90 hover:text-[hsl(var(--neon-blue))] transition-colors font-medium"
+              >
                 {item.label}
               </button>
             ))}
-            <Button className="btn-primary-onyx" onClick={() => scrollToSection("contact")}>
-              Book Now
-            </Button>
+            <Button onClick={() => scrollToSection("contact")}>Book Now</Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -87,12 +87,12 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left link-onyx font-medium py-2"
+                className="block w-full text-left text-foreground/90 hover:text-[hsl(var(--neon-blue))] transition-colors font-medium py-2"
               >
                 {item.label}
               </button>
             ))}
-            <Button className="w-full btn-primary-onyx" onClick={() => scrollToSection("contact")}>
+            <Button onClick={() => scrollToSection("contact")} className="w-full">
               Book Now
             </Button>
           </nav>

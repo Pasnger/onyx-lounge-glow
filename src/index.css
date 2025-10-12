@@ -3,136 +3,96 @@
 @tailwind components;
 @tailwind utilities;
 
-/* =========================================================
-   THEME: Concrete base + Gold primary (#d6ba6e) → Neon Blue hover
-   - Concrete base color (#8f989b ≈ hsl(195, 6%, 58%)) optional
-   - Primary accent = GOLD (default state)
-   - Hover accent = NEON BLUE
-   ========================================================= */
-
+/* ===== THEME: Concrete base + Neon Blue accent ===== */
 @layer base {
   :root {
-    /* --- Base surfaces (light concrete matching shop wall) --- */
-    --background: 0 0% 73%; /* Light concrete grey matching shop wall */
-    --foreground: 0 0% 15%; /* Dark charcoal for readability */
+    /* Surfaces (concrete look) */
+    --background: 0 0% 10%; /* page bg (charcoal) */
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 68%;
-    --card-foreground: 0 0% 15%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 70%;
-    --popover-foreground: 0 0% 15%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 100%;
 
-    /* --- Primary accent (SANDSTONE GOLD - default state) --- */
-    --primary: 42 58% 55%; /* Warm sandstone gold */
-    --primary-foreground: 0 0% 15%;
+    /* Primary = ONYX neon blue */
+    --primary: 220 100% 60%; /* ~#2966FF–#3366FF */
+    --primary-foreground: 0 0% 100%;
 
-    /* --- Hover accent (NEON BLUE) --- */
-    /* ~ #2966FF */
-    --neon-blue: 220 100% 56%;
-    --ring: 220 100% 56%;
+    /* Greys for structure */
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* --- Supporting greys --- */
-    --secondary: 42 58% 55%; /* Sandstone gold */
-    --secondary-foreground: 0 0% 15%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 85%;
 
-    --muted: 0 0% 78%; /* Very light grey */
-    --muted-foreground: 0 0% 35%;
-
-    --accent: 200 100% 50%; /* Electric blue */
+    --accent: 0 0% 18%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 45%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 60%;
-    --input: 0 0% 60%;
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 220 100% 60%;
 
     --radius: 0.5rem;
 
-    /* Custom concrete colors matching shop wall */
-    --concrete-light: 0 0% 73%; /* Light concrete - main bg */
-    --concrete-medium: 0 0% 55%; /* Medium concrete - cards */
-    --concrete-dark: 0 0% 15%; /* Dark charcoal - footer/header */
-    
-    /* Accent colors */
-    --sandstone: 42 58% 55%; /* Warm sandstone gold - default accent */
-    --neon-blue: 200 100% 50%; /* Electric blue - hover accent */
-    
-    /* Gradients */
-    --gradient-concrete: linear-gradient(135deg, hsl(0 0% 73%) 0%, hsl(0 0% 68%) 100%);
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 78%) 0%, hsl(0 0% 68%) 100%);
-    --gradient-hero-overlay: linear-gradient(180deg, hsl(0 0% 73% / 0.3) 0%, hsl(0 0% 68% / 0.5) 100%);
+    /* Brand aliases (in case classes reference these) */
+    --onyx-black: 0 0% 5%;
+    --concrete: 0 0% 14%;
+    --concrete-light: 0 0% 80%;
+    --neon-blue: 220 100% 60%;
+
+    /* Keep “sandstone” as a neutral warm grey so nothing looks yellow */
+    --sandstone: 35 6% 52%;
+    --sandstone-secondary: 35 6% 60%;
   }
 
+  /* Base body styling */
   body {
-    color: hsl(var(--foreground));
+    @apply text-foreground;
     background-color: hsl(var(--background));
-    background-image: url('/concrete-texture.png');
-    background-repeat: repeat;
-    background-size: 400px 400px;
-    background-blend-mode: overlay;
-    position: relative;
-  }
-  
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(180deg, hsl(0 0% 73% / 0.6) 0%, hsl(0 0% 68% / 0.7) 100%);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  /* Accessible focus ring matching neon blue */
-  :focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
   }
 }
 
-/* =========================================================
-   UTILITIES
-   ========================================================= */
+/* ===== Utilities: Concrete texture + Neon glow ===== */
 @layer utilities {
-  /* ---------------- Gold to Blue Transition Classes ---------------- */
-  .gold-to-blue-text {
-    color: hsl(var(--sandstone));
-    transition: color 300ms ease, text-shadow 300ms ease;
+  /* Mottled concrete without external images */
+  .bg-concrete {
+    position: relative;
+    background:
+      radial-gradient(60% 80% at 20% 10%, hsl(0 0% 100% / 0.02), transparent 60%),
+      radial-gradient(80% 60% at 90% 20%, hsl(0 0% 0% / 0.05), transparent 50%),
+      radial-gradient(50% 70% at 0% 90%, hsl(0 0% 100% / 0.02), transparent 55%),
+      linear-gradient(180deg, hsl(0 0% 14%), hsl(0 0% 10%));
   }
-  .gold-to-blue-text:hover {
-    color: hsl(var(--neon-blue));
-    text-shadow: 0 0 8px hsl(var(--neon-blue) / 0.6);
-  }
-  
-  .gold-to-blue-border {
-    border-color: hsl(var(--sandstone));
-    transition: border-color 300ms ease, box-shadow 300ms ease;
-  }
-  .gold-to-blue-border:hover {
-    border-color: hsl(var(--neon-blue));
-    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.4);
-  }
-  
-  .gold-to-blue-bg {
-    background-color: hsl(var(--sandstone));
-    transition: background-color 300ms ease, box-shadow 300ms ease;
-  }
-  .gold-to-blue-bg:hover {
-    background-color: hsl(var(--neon-blue));
-    box-shadow: 0 0 30px hsl(var(--neon-blue) / 0.5);
+  .bg-concrete::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 25% 20%, hsl(0 0% 100% / 0.03) 0, transparent 100%),
+      radial-gradient(1px 1px at 60% 40%, hsl(0 0% 0% / 0.04) 0, transparent 100%),
+      radial-gradient(1px 1px at 80% 70%, hsl(0 0% 100% / 0.02) 0, transparent 100%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
   }
 
-  /* ---------------- Gold Glow (default state) ---------------- */
-  .gold-glow {
-    text-shadow: 0 0 12px hsl(var(--sandstone) / 0.5), 0 0 24px hsl(var(--sandstone) / 0.3);
+  /* Neon text glow helper */
+  .neon {
+    text-shadow:
+      0 0 6px hsl(var(--neon-blue) / 0.6),
+      0 0 16px hsl(var(--neon-blue) / 0.45),
+      0 0 28px hsl(var(--neon-blue) / 0.35);
   }
-  
-  /* ---------------- Neon Blue Glow (hover state) ---------------- */
-  .neon-glow-subtle {
-    text-shadow: 0 0 8px hsl(var(--neon-blue) / 0.6), 0 0 20px hsl(var(--neon-blue) / 0.4);
-  }
-  
-  .neon-glow-strong {
-    text-shadow: 0 0 12px hsl(var(--neon-blue) / 0.8), 0 0 30px hsl(var(--neon-blue) / 0.5), 0 0 50px hsl(var(--neon-blue) / 0.3);
+}
+
+/* Optional: subtle focus ring that matches neon blue */
+@layer base {
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 }
