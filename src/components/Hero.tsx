@@ -43,7 +43,7 @@ const Hero = () => {
         </div>
 
         {/* Buttons — pulled up closer to the logo */}
-        <div className="-mt-2 sm:-mt-3 md:-mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up">
+        <div className="-mt-4 sm:-mt-6 md:-mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up">
           <Button
             onClick={() => scrollToSection("contact")}
             size="lg"
