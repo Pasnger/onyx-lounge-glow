@@ -50,10 +50,14 @@
     --sandstone-secondary: 35 6% 60%;
   }
 
-  /* Base body styling */
+  /* Base body styling with fixed background */
   body {
     @apply text-foreground;
-    background-color: hsl(var(--background));
+    background-image: url('/concrete-bg.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 

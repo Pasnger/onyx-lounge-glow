@@ -19,13 +19,8 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0" style={{ transform: `translateY(${scrollY * 0.5}px)` }}>
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
-      </div>
+      {/* Semi-transparent overlay for text readability */}
+      <div className="absolute inset-0 bg-background/40 z-0" />
 
       {/* Content */}
       <div className="relative z-10 px-4 max-w-5xl mx-auto flex flex-col items-center">

@@ -17,7 +17,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-24 section-gradient">
+    <section id="gallery" className="py-24 bg-background/60">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">

@@ -16,8 +16,8 @@ const App = () => (
       <Toaster />
       <Sonner />
 
-      {/* Global concrete background + text color */}
-      <div className="min-h-screen bg-concrete text-foreground">
+      {/* Transparent wrapper to allow fixed background to show */}
+      <div className="min-h-screen text-foreground">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
