@@ -10,9 +10,9 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="dark border-t border-sandstone/30 bg-background/60">
+    <footer id="contact" className="dark border-t border-sandstone/30 bg-background/30">
       {/* CTA Section */}
-      <div className="py-20 bg-background/80">
+      <div className="py-20 bg-background/50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
             Step into <span className="text-sandstone gold-glow">Style</span>.

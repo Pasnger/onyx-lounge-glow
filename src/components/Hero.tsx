@@ -20,7 +20,7 @@ const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Semi-transparent overlay for text readability */}
-      <div className="absolute inset-0 bg-background/40 z-0" />
+      <div className="absolute inset-0 bg-background/20 z-0" />
 
       {/* Content */}
       <div className="relative z-10 px-4 max-w-5xl mx-auto flex flex-col items-center">

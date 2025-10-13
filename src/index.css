@@ -53,6 +53,7 @@
   /* Base body styling with fixed background */
   body {
     @apply text-foreground;
+    background-color: hsl(0 0% 14%); /* Fallback concrete color */
     background-image: url('/concrete-bg.png');
     background-attachment: fixed;
     background-size: cover;
