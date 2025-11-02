@@ -45,11 +45,13 @@ const Hero = () => {
         {/* Buttons — pulled up closer to the logo */}
         <div className="-mt-8 sm:-mt-12 md:-mt-16 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up">
           <Button
-            onClick={() => scrollToSection("contact")}
+            asChild
             size="lg"
             className="bg-sandstone hover:bg-neon-blue shadow-gold hover:shadow-neon-blue"
           >
-            Book a Cut
+            <a href="https://onyxlounge.booksy.com/a/" target="_blank" rel="noopener noreferrer">
+              Book a Cut
+            </a>
           </Button>
           <Button
             onClick={() => scrollToSection("about")}

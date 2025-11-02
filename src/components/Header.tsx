@@ -62,7 +62,11 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
-            <Button onClick={() => scrollToSection("contact")}>Book Now</Button>
+            <Button asChild>
+              <a href="https://onyxlounge.booksy.com/a/" target="_blank" rel="noopener noreferrer">
+                Book Now
+              </a>
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -92,8 +96,10 @@ const Header = () => {
                 {item.label}
               </button>
             ))}
-            <Button onClick={() => scrollToSection("contact")} className="w-full">
-              Book Now
+            <Button asChild className="w-full">
+              <a href="https://onyxlounge.booksy.com/a/" target="_blank" rel="noopener noreferrer">
+                Book Now
+              </a>
             </Button>
           </nav>
         )}

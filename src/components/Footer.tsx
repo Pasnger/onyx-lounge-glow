@@ -23,10 +23,13 @@ const Footer = () => {
             Book your next cut and experience precision grooming in South Australia's premier barber lounge
           </p>
           <Button
+            asChild
             size="lg"
             className="bg-sandstone hover:bg-neon-blue shadow-gold hover:shadow-neon-blue"
           >
-            Book Your Next Cut
+            <a href="https://onyxlounge.booksy.com/a/" target="_blank" rel="noopener noreferrer">
+              Book Your Next Cut
+            </a>
           </Button>
         </div>
       </div>
@@ -86,6 +89,12 @@ const Footer = () => {
                   <br />
                   Paradise SA 5075
                 </p>
+                <a 
+                  href="tel:0419861501" 
+                  className="block text-muted-foreground hover:text-neon-blue transition-colors"
+                >
+                  Phone: 0419 861 501
+                </a>
                 <div className="flex gap-4 pt-4">
                   <a
                     href="https://www.instagram.com/onyx_barberlounge/"
