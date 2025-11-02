@@ -1,10 +1,8 @@
-import { Scissors, Sparkles } from "lucide-react";
+import { Scissors, Sparkles, User, Baby, Users } from "lucide-react";
 import { useScrollReveal, getRevealClass } from "@/hooks/useScrollReveal";
 
 const Services = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ threshold: 0.3 });
-  const { ref: card1Ref, isVisible: card1Visible } = useScrollReveal({ threshold: 0.3 });
-  const { ref: card2Ref, isVisible: card2Visible } = useScrollReveal({ threshold: 0.3 });
   const services = [
     {
       icon: Scissors,
@@ -14,9 +12,27 @@ const Services = () => {
     },
     {
       icon: Sparkles,
-      title: "Hair & Beard",
+      title: "Haircut & Beard",
       price: "$70",
       description: "Complete grooming experience for a sharp, polished look",
+    },
+    {
+      icon: User,
+      title: "Beard",
+      price: "$25",
+      description: "Expert beard trimming and shaping",
+    },
+    {
+      icon: Baby,
+      title: "Kids Haircut",
+      price: "$40",
+      description: "Gentle and patient haircuts for children",
+    },
+    {
+      icon: Users,
+      title: "Seniors Haircut",
+      price: "$35",
+      description: "Special pricing for senior clients",
     },
   ];
 
@@ -33,17 +49,14 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
-            const ref = index === 0 ? card1Ref : card2Ref;
-            const isVisible = index === 0 ? card1Visible : card2Visible;
             
             return (
               <div
                 key={index}
-                ref={ref}
-                className={`group relative bg-card rounded-lg p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 hover:shadow-neon-blue shadow-soft ${getRevealClass(isVisible, index === 0 ? "slide-left" : "slide-right")}`}
+                className={`group relative bg-card rounded-lg p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 hover:shadow-neon-blue shadow-soft`}
               >
                 {/* Icon */}
                 <div className="w-16 h-16 bg-sandstone/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-neon-blue/20 transition-all duration-300 shadow-gold group-hover:shadow-neon-blue">
@@ -69,10 +82,7 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-lg text-sandstone gold-glow font-semibold">
-            Senior & Kids Discounts Apply
-          </p>
-          <p className="text-muted-foreground mt-2">
+          <p className="text-muted-foreground">
             Walk-ins welcome • Bookings recommended
           </p>
         </div>
