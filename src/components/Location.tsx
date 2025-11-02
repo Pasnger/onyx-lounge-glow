@@ -42,7 +42,7 @@ const Location = () => {
             
             {/* Google Map Embed */}
             <a
-              href="https://www.google.com/maps/place/Onyx+Barber+Lounge/@-34.8736,138.6726,15z/data=!4m6!3m5!1s0x6ab0cbdde74d48e3:0x70f8fb59d4bff1df!8m2!3d-34.8736!4d138.6726!16s%2Fg%2F11y3c7y8qb?entry=ttu"
+              href="https://www.google.com/maps/search/?api=1&query=Shop+1%2F723-725+Lower+North+East+Rd+Paradise+SA+5075"
               target="_blank"
               rel="noopener noreferrer"
               className="block aspect-video rounded-lg overflow-hidden border-2 border-sandstone hover:border-neon-blue shadow-gold hover:shadow-neon-blue transition-all duration-300 relative group cursor-pointer"
