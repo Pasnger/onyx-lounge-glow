@@ -2,7 +2,15 @@ import { Scissors, Sparkles, User, Baby, Users, Info } from "lucide-react";
 import { useScrollReveal, getRevealClass } from "@/hooks/useScrollReveal";
 
 const Services = () => {
-  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ threshold: 0.3 });
+  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ 
+    threshold: 0.3,
+    triggerOnce: true 
+  });
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollReveal({ 
+    threshold: 0.1,
+    triggerOnce: true 
+  });
+  
   const services = [
     {
       icon: Scissors,
@@ -55,14 +63,15 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             
             return (
               <div
                 key={index}
-                className={`group relative bg-card rounded-lg p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 hover:shadow-neon-blue shadow-soft`}
+                className={`group relative bg-card rounded-lg p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 hover:shadow-neon-blue shadow-soft ${getRevealClass(cardsVisible, "fade-up")}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {/* Icon */}
                 <div className="w-16 h-16 bg-sandstone/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-neon-blue/20 transition-all duration-300 shadow-gold group-hover:shadow-neon-blue">
