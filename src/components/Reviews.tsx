@@ -202,7 +202,7 @@ const Reviews = () => {
         {/* CTA Button */}
         <div className="text-center mt-12">
           <a
-            href="https://www.google.com/maps/place/Onyx+Barber+Lounge"
+            href="https://search.google.com/local/reviews?placeid=ChIJTditHEDbsGoR36_5TbWVjwc"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-sandstone/10 border-2 border-sandstone text-sandstone font-semibold rounded-lg hover:bg-sandstone hover:text-background transition-all duration-300 shadow-gold hover:shadow-neon-blue gold-glow hover:scale-105"

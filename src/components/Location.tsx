@@ -41,18 +41,26 @@ const Location = () => {
             </div>
             
             {/* Google Map Embed */}
-            <div className="aspect-video rounded-lg overflow-hidden border-2 border-sandstone hover:border-neon-blue shadow-gold hover:shadow-neon-blue transition-all duration-300">
+            <a
+              href="https://www.google.com/maps/place/Onyx+Barber+Lounge/@-34.8736,138.6726,15z/data=!4m6!3m5!1s0x6ab0cbdde74d48e3:0x70f8fb59d4bff1df!8m2!3d-34.8736!4d138.6726!16s%2Fg%2F11y3c7y8qb?entry=ttu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block aspect-video rounded-lg overflow-hidden border-2 border-sandstone hover:border-neon-blue shadow-gold hover:shadow-neon-blue transition-all duration-300 relative group cursor-pointer"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.8635244679795!2d138.6726!3d-34.8736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ab0ce86e4a1d84d%3A0x1234567890abcdef!2s723-725%20Lower%20North%20East%20Rd%2C%20Paradise%20SA%205075!5e0!3m2!1sen!2sau!4v1234567890"
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'none' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Onyx Barber Lounge Location"
               ></iframe>
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-center justify-center">
+                <span className="text-white font-semibold bg-sandstone/90 px-4 py-2 rounded-lg">Open in Google Maps</span>
+              </div>
+            </a>
 
             <div className="mt-8 p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
               <p className="text-sandstone gold-glow font-semibold text-lg text-center">
