@@ -8,6 +8,84 @@ const Services = () => {
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollReveal({ 
     threshold: 0.1
   });
+
+  // Structured data for services
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "name": "Haircut",
+        "description": "Precision cuts tailored to your style and face shape",
+        "provider": {
+          "@type": "HairSalon",
+          "name": "Onyx Barber Lounge"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "50",
+          "priceCurrency": "AUD"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Haircut & Beard",
+        "description": "Complete grooming experience for a sharp, polished look",
+        "provider": {
+          "@type": "HairSalon",
+          "name": "Onyx Barber Lounge"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "70",
+          "priceCurrency": "AUD"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Beard Trimming",
+        "description": "Expert beard trimming and shaping",
+        "provider": {
+          "@type": "HairSalon",
+          "name": "Onyx Barber Lounge"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "25",
+          "priceCurrency": "AUD"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Kids Haircut",
+        "description": "Gentle and patient haircuts for children 12 and under",
+        "provider": {
+          "@type": "HairSalon",
+          "name": "Onyx Barber Lounge"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "40",
+          "priceCurrency": "AUD"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Seniors Haircut",
+        "description": "Special pricing for senior clients 60 and above",
+        "provider": {
+          "@type": "HairSalon",
+          "name": "Onyx Barber Lounge"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "35",
+          "priceCurrency": "AUD"
+        }
+      }
+    ]
+  };
   
   const services = [
     {
@@ -50,6 +128,9 @@ const Services = () => {
 
   return (
     <section id="services" className="py-24 bg-concrete-medium relative">
+      {/* Service Schema Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      
       <div className="container mx-auto px-4">
         <div ref={headerRef} className={`text-center mb-16 ${getRevealClass(headerVisible, "fade-scale")}`}>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">

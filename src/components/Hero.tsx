@@ -28,6 +28,9 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 px-4 max-w-5xl mx-auto flex flex-col items-center h-full justify-end pb-[16.67vh]">
+        {/* H1 for SEO - Visually Hidden */}
+        <h1 className="sr-only">Onyx Barber Lounge | Premium Men's Grooming in Paradise, South Australia</h1>
+        
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up">
           <Button

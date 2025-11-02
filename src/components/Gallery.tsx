@@ -11,12 +11,12 @@ const Gallery = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ threshold: 0.3 });
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal({ threshold: 0.1 });
   const images = [
-    { id: 1, src: haircut1, alt: "Premium haircut showcase" },
-    { id: 2, src: haircut2, alt: "Beard grooming expertise" },
-    { id: 3, src: haircut3, alt: "Modern fade technique" },
-    { id: 4, src: haircut4, alt: "Classic styling" },
-    { id: 5, src: haircut5, alt: "Precision barbering" },
-    { id: 6, src: haircut6, alt: "Contemporary cuts" },
+    { id: 1, src: haircut1, alt: "Premium men's haircut by Onyx Barber Lounge Paradise SA - modern fade styling" },
+    { id: 2, src: haircut2, alt: "Professional beard grooming and trimming service Paradise South Australia" },
+    { id: 3, src: haircut3, alt: "Contemporary fade haircut technique at Onyx Barber Lounge Paradise" },
+    { id: 4, src: haircut4, alt: "Classic men's haircut and styling by skilled barber Paradise SA" },
+    { id: 5, src: haircut5, alt: "Precision barbering and grooming services Paradise South Australia" },
+    { id: 6, src: haircut6, alt: "Modern men's hairstyle by Onyx Barber Lounge Lower North East Road Paradise" },
   ];
 
   return (

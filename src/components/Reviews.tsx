@@ -18,6 +18,20 @@ const Reviews = () => {
     threshold: 0.1,
   });
 
+  // Review schema for rich snippets
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Onyx Barber Lounge",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "8",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
   const reviews = [
     {
       id: 1,
@@ -79,6 +93,9 @@ const Reviews = () => {
 
   return (
     <section className="py-20 px-4 section-gradient relative overflow-hidden">
+      {/* Review Schema Markup */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
+      
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-sandstone rounded-full blur-3xl"></div>
