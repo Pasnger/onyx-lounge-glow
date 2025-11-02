@@ -3,12 +3,10 @@ import { useScrollReveal, getRevealClass } from "@/hooks/useScrollReveal";
 
 const Services = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ 
-    threshold: 0.3,
-    triggerOnce: true 
+    threshold: 0.3
   });
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollReveal({ 
-    threshold: 0.1,
-    triggerOnce: true 
+    threshold: 0.1
   });
   
   const services = [

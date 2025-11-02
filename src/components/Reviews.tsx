@@ -12,12 +12,10 @@ import Autoplay from "embla-carousel-autoplay";
 const Reviews = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({
     threshold: 0.3,
-    triggerOnce: true,
   });
 
   const { ref: carouselRef, isVisible: carouselVisible } = useScrollReveal({
     threshold: 0.1,
-    triggerOnce: true,
   });
 
   const reviews = [
@@ -136,13 +134,13 @@ const Reviews = () => {
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
-              {reviews.map((review) => (
+              {reviews.map((review, index) => (
                 <CarouselItem
                   key={review.id}
                   className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="h-full">
-                    <div className="concrete-texture rounded-lg p-6 border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300 shadow-soft-dark hover:neon-glow-subtle h-full flex flex-col group">
+                    <div className={`concrete-texture rounded-lg p-6 border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300 shadow-soft-dark hover:neon-glow-subtle h-full flex flex-col group ${getRevealClass(carouselVisible, "fade-up")}`} style={{ transitionDelay: `${index * 100}ms` }}>
                       {/* Header with Stars and Badge */}
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex gap-1">
