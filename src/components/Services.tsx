@@ -68,7 +68,7 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className={`group relative bg-card rounded-lg p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 hover:shadow-neon-blue shadow-soft ${getRevealClass(cardsVisible, "fade-up")}`}
+                className={`group relative bg-card rounded-lg p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 shadow-gold hover:shadow-neon-blue ${getRevealClass(cardsVisible, "fade-up")}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {/* Icon */}
