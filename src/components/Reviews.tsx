@@ -140,7 +140,7 @@ const Reviews = () => {
                   className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
                 >
                   <div className="h-full">
-                    <div className={`concrete-texture rounded-lg p-6 border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300 shadow-gold hover:shadow-neon-blue h-full flex flex-col group ${getRevealClass(carouselVisible, "fade-up")}`} style={{ transitionDelay: `${index * 100}ms` }}>
+                    <div className={`concrete-texture rounded-lg p-6 border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300 shadow-soft-dark hover:shadow-soft h-full flex flex-col group ${getRevealClass(carouselVisible, "fade-up")}`} style={{ transitionDelay: `${index * 100}ms` }}>
                       {/* Header with Stars and Badge */}
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex gap-1">
