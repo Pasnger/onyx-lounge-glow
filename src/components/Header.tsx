@@ -38,7 +38,7 @@ const Header = () => {
             <img
               src={onyxLogo}
               alt="ONYX Barber Lounge"
-              className="h-20 w-auto transition-all duration-300 gold-glow group-hover:neon-glow-subtle"
+              className="h-24 w-auto transition-all duration-300 gold-glow group-hover:neon-glow-subtle"
               style={{
                 mixBlendMode: "screen",
                 filter: "brightness(1.2) contrast(1.1)",
