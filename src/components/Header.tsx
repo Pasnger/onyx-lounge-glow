@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import onyxLogo from "@/assets/onyx-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,22 +29,21 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Brand */}
+          {/* Brand Logo */}
           <button
             onClick={() => scrollToSection("about")}
-            className="text-2xl font-heading font-bold tracking-tight group"
+            className="group"
             aria-label="Onyx Barber Lounge - back to top"
           >
-            <span
-              className="
-                text-white transition-all duration-300
-                drop-shadow-[0_0_4px_hsl(var(--neon-blue)/.25)]
-                group-hover:text-[hsl(var(--neon-blue))]
-                group-hover:drop-shadow-[0_0_14px_hsl(var(--neon-blue)/.9)]
-              "
-            >
-              Onyx Barber Lounge
-            </span>
+            <img
+              src={onyxLogo}
+              alt="ONYX Barber Lounge"
+              className="h-12 w-auto transition-all duration-300 gold-glow group-hover:neon-glow-subtle"
+              style={{
+                mixBlendMode: "screen",
+                filter: "brightness(1.2) contrast(1.1)",
+              }}
+            />
           </button>
 
           {/* Desktop Navigation */}

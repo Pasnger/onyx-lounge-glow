@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import onyxLogo from "@/assets/onyx-logo.png";
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -28,22 +27,9 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 max-w-5xl mx-auto flex flex-col items-center">
-        {/* Logo */}
-        <div className="animate-fade-in mb-0">
-          <img
-            src={onyxLogo}
-            alt="ONYX Barber Lounge"
-            className="w-[28rem] sm:w-[40rem] md:w-[46rem] mx-auto transition-all duration-500 gold-glow hover:neon-glow-subtle"
-            style={{
-              mixBlendMode: "screen",
-              filter: "brightness(1.2) contrast(1.1)",
-            }}
-          />
-        </div>
-
-        {/* Buttons — pulled up closer to the logo */}
-        <div className="-mt-8 sm:-mt-12 md:-mt-16 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up">
+      <div className="relative z-10 px-4 max-w-5xl mx-auto flex flex-col items-center justify-center">
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up">
           <Button
             asChild
             size="lg"
