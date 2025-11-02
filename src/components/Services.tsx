@@ -1,6 +1,9 @@
 import { Scissors, Sparkles } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Services = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ threshold: 0.3 });
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollReveal({ threshold: 0.2 });
   const services = [
     {
       icon: Scissors,
@@ -19,7 +22,12 @@ const Services = () => {
   return (
     <section id="services" className="py-24 bg-concrete-medium relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-700 ${
+            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
             Our <span className="text-sandstone gold-glow">Services</span>
           </h2>
@@ -29,7 +37,12 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div
+          ref={cardsRef}
+          className={`grid md:grid-cols-2 gap-8 max-w-4xl mx-auto transition-all duration-700 delay-200 ${
+            cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

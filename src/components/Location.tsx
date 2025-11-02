@@ -1,6 +1,9 @@
 import { MapPin, Clock } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Location = () => {
+  const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ threshold: 0.3 });
+  const { ref: contentRef, isVisible: contentVisible } = useScrollReveal({ threshold: 0.2 });
   const hours = [
     { day: "Monday", time: "9-5" },
     { day: "Tuesday", time: "9-5" },
@@ -14,14 +17,24 @@ const Location = () => {
   return (
     <section id="location" className="py-24 bg-muted">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-700 ${
+            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
             Visit <span className="text-sandstone gold-glow">Us</span>
           </h2>
           <div className="w-20 h-1 bg-sandstone shadow-gold mx-auto mb-6"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div
+          ref={contentRef}
+          className={`grid md:grid-cols-2 gap-12 max-w-6xl mx-auto transition-all duration-700 delay-200 ${
+            contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           {/* Map */}
           <div className="space-y-6">
             <div className="flex items-start gap-4">

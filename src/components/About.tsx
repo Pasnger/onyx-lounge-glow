@@ -1,6 +1,16 @@
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+
 const About = () => {
+  const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
+
   return (
     <section id="about" className="py-24 section-gradient relative overflow-hidden">
+      <div
+        ref={ref}
+        className={`transition-all duration-700 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sandstone/5 to-transparent"></div>
       
@@ -44,6 +54,7 @@ const About = () => {
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-sandstone/20 rounded-lg -z-10"></div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Instagram } from "lucide-react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Footer = () => {
+  const { ref: ctaRef, isVisible: ctaVisible } = useScrollReveal({ threshold: 0.3 });
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -13,7 +15,12 @@ const Footer = () => {
     <footer id="contact" className="dark border-t border-sandstone/30">
       {/* CTA Section */}
       <div className="py-20 bg-gradient-to-b from-onyx to-concrete-medium">
-        <div className="container mx-auto px-4 text-center">
+        <div
+          ref={ctaRef}
+          className={`container mx-auto px-4 text-center transition-all duration-700 ${
+            ctaVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
             Step into <span className="text-sandstone gold-glow">Style</span>.
             <br />
