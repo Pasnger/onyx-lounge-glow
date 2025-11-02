@@ -1,5 +1,5 @@
 import { Instagram } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useScrollReveal, getRevealClass } from "@/hooks/useScrollReveal";
 import haircut1 from "@/assets/haircut-1.png";
 import haircut2 from "@/assets/haircut-2.png";
 import haircut3 from "@/assets/haircut-3.png";
@@ -22,12 +22,7 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-24 section-gradient">
       <div className="container mx-auto px-4">
-        <div
-          ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+        <div ref={headerRef} className={`text-center mb-16 ${getRevealClass(headerVisible, "fade-scale")}`}>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
             Our <span className="text-sandstone gold-glow">Work</span>
           </h2>
@@ -57,16 +52,12 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div
-          ref={gridRef}
-          className={`grid grid-cols-2 md:grid-cols-3 gap-4 transition-all duration-700 delay-200 ${
-            gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
-          {images.map((image) => (
+        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {images.map((image, idx) => (
             <div
               key={image.id}
-              className="group relative aspect-square bg-card rounded-lg overflow-hidden border-2 border-sandstone shadow-gold hover:border-neon-blue transition-all duration-300 hover:shadow-neon-blue"
+              className={`group relative aspect-square bg-card rounded-lg overflow-hidden border-2 border-sandstone shadow-gold hover:border-neon-blue transition-all duration-300 hover:shadow-neon-blue ${getRevealClass(gridVisible, "fade-scale")}`}
+              style={{ transitionDelay: `${idx * 100}ms` }}
             >
               <img 
                 src={image.src} 

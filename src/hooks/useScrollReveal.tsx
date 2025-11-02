@@ -35,3 +35,26 @@ export const useScrollReveal = (options: ScrollRevealOptions = {}) => {
 
   return { ref, isVisible };
 };
+
+// Animation variants
+export const getRevealClass = (isVisible: boolean, variant: "fade-up" | "fade-scale" | "slide-left" | "slide-right" = "fade-up", delay: number = 0) => {
+  const baseTransition = `transition-all duration-1000 ease-out`;
+  const delayClass = delay > 0 ? `delay-${delay}` : "";
+  
+  const variants = {
+    "fade-up": isVisible 
+      ? "opacity-100 translate-y-0 scale-100 blur-0" 
+      : "opacity-0 translate-y-16 scale-95 blur-sm",
+    "fade-scale": isVisible 
+      ? "opacity-100 scale-100 blur-0" 
+      : "opacity-0 scale-90 blur-md",
+    "slide-left": isVisible 
+      ? "opacity-100 translate-x-0 blur-0" 
+      : "opacity-0 -translate-x-16 blur-sm",
+    "slide-right": isVisible 
+      ? "opacity-100 translate-x-0 blur-0" 
+      : "opacity-0 translate-x-16 blur-sm",
+  };
+  
+  return `${baseTransition} ${delayClass} ${variants[variant]}`;
+};

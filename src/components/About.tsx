@@ -1,23 +1,18 @@
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useScrollReveal, getRevealClass } from "@/hooks/useScrollReveal";
 
 const About = () => {
-  const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
+  const { ref: textRef, isVisible: textVisible } = useScrollReveal({ threshold: 0.2 });
+  const { ref: imageRef, isVisible: imageVisible } = useScrollReveal({ threshold: 0.3 });
 
   return (
     <section id="about" className="py-24 section-gradient relative overflow-hidden">
-      <div
-        ref={ref}
-        className={`transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-      >
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sandstone/5 to-transparent"></div>
       
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="space-y-6">
+          <div ref={textRef} className={`space-y-6 ${getRevealClass(textVisible, "slide-left")}`}>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground">
               Welcome to <span className="text-sandstone gold-glow">Onyx</span>
             </h2>
@@ -37,7 +32,7 @@ const About = () => {
           </div>
 
           {/* Image Placeholder */}
-          <div className="relative mirror-glow">
+          <div ref={imageRef} className={`relative mirror-glow ${getRevealClass(imageVisible, "slide-right")}`}>
             <div className="aspect-[4/5] concrete-texture rounded-lg overflow-hidden shadow-soft-dark border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300">
               <div className="w-full h-full flex items-center justify-center">
                 <div className="text-center space-y-4 p-8">
@@ -54,7 +49,6 @@ const About = () => {
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-sandstone/20 rounded-lg -z-10"></div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );

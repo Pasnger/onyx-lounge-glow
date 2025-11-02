@@ -1,9 +1,10 @@
 import { Scissors, Sparkles } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useScrollReveal, getRevealClass } from "@/hooks/useScrollReveal";
 
 const Services = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ threshold: 0.3 });
-  const { ref: cardsRef, isVisible: cardsVisible } = useScrollReveal({ threshold: 0.2 });
+  const { ref: card1Ref, isVisible: card1Visible } = useScrollReveal({ threshold: 0.3 });
+  const { ref: card2Ref, isVisible: card2Visible } = useScrollReveal({ threshold: 0.3 });
   const services = [
     {
       icon: Scissors,
@@ -22,12 +23,7 @@ const Services = () => {
   return (
     <section id="services" className="py-24 bg-concrete-medium relative">
       <div className="container mx-auto px-4">
-        <div
-          ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 ${
-            headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+        <div ref={headerRef} className={`text-center mb-16 ${getRevealClass(headerVisible, "fade-scale")}`}>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
             Our <span className="text-sandstone gold-glow">Services</span>
           </h2>
@@ -37,18 +33,17 @@ const Services = () => {
           </p>
         </div>
 
-        <div
-          ref={cardsRef}
-          className={`grid md:grid-cols-2 gap-8 max-w-4xl mx-auto transition-all duration-700 delay-200 ${
-            cardsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const ref = index === 0 ? card1Ref : card2Ref;
+            const isVisible = index === 0 ? card1Visible : card2Visible;
+            
             return (
               <div
                 key={index}
-                className="group relative bg-card rounded-lg p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 hover:shadow-neon-blue shadow-soft"
+                ref={ref}
+                className={`group relative bg-card rounded-lg p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 hover:shadow-neon-blue shadow-soft ${getRevealClass(isVisible, index === 0 ? "slide-left" : "slide-right")}`}
               >
                 {/* Icon */}
                 <div className="w-16 h-16 bg-sandstone/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-neon-blue/20 transition-all duration-300 shadow-gold group-hover:shadow-neon-blue">
