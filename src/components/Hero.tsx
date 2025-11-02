@@ -27,7 +27,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-4 max-w-5xl mx-auto flex flex-col items-center justify-center">
+      <div className="relative z-10 px-4 max-w-5xl mx-auto flex flex-col items-center h-full justify-end pb-[16.67vh]">
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up">
           <Button
