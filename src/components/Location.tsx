@@ -54,14 +54,18 @@ const Location = () => {
               ></iframe>
             </div>
 
-            <div className="p-4 bg-card rounded-lg border-2 border-sandstone/30 shadow-soft-dark hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
-              <p className="text-muted-foreground text-sm mb-2">Prefer to call?</p>
-              <a 
-                href="tel:0419861501" 
-                className="text-lg font-semibold text-sandstone gold-glow hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300"
-              >
-                0419 861 501
-              </a>
+            <div className="mt-8 p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
+              <p className="text-sandstone gold-glow font-semibold text-lg text-center">
+                Prefer to call?
+              </p>
+              <p className="text-muted-foreground text-center mt-2">
+                <a 
+                  href="tel:0419861501" 
+                  className="hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300"
+                >
+                  0419 861 501
+                </a>
+              </p>
             </div>
           </div>
 
