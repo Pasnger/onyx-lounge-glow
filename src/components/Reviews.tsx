@@ -122,7 +122,7 @@ const Reviews = () => {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-6 h-6 fill-sandstone text-sandstone gold-glow"
+                    className="w-6 h-6 fill-yellow-500 text-yellow-500"
                   />
                 ))}
               </div>
@@ -164,7 +164,7 @@ const Reviews = () => {
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className="w-4 h-4 fill-sandstone text-sandstone gold-glow"
+                              className="w-4 h-4 fill-yellow-500 text-yellow-500"
                             />
                           ))}
                         </div>
