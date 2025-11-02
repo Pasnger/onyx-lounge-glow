@@ -16,16 +16,16 @@ const Location = () => {
   ];
 
   return (
-    <section id="location" className="py-24 bg-muted">
-      <div className="container mx-auto px-4">
-        <div ref={headerRef} className={`text-center mb-16 ${getRevealClass(headerVisible, "fade-scale")}`}>
+    <section id="location" className="py-12 md:py-20 bg-muted">
+      <div className="container mx-auto px-4 md:px-6">
+        <div ref={headerRef} className={`text-center mb-12 md:mb-16 ${getRevealClass(headerVisible, "fade-scale")}`}>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
             Visit <span className="text-sandstone gold-glow">Us</span>
           </h2>
-          <div className="w-20 h-1 bg-sandstone shadow-gold mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-sandstone shadow-gold mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           {/* Map */}
           <div ref={mapRef} className={`space-y-6 ${getRevealClass(mapVisible, "slide-left")}`}>
             <div className="flex items-start gap-4">
@@ -62,14 +62,14 @@ const Location = () => {
               </div>
             </a>
 
-            <div className="mt-8 p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
-              <p className="text-sandstone gold-glow font-semibold text-lg text-center">
+            <div className="mt-6 md:mt-8 p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
+              <p className="text-sandstone gold-glow font-semibold text-base md:text-lg text-center">
                 Prefer to call?
               </p>
               <p className="text-muted-foreground text-center mt-2">
                 <a 
                   href="tel:0419861501" 
-                  className="hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300"
+                  className="hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300 text-base md:text-lg"
                 >
                   0419 861 501
                 </a>
@@ -102,11 +102,11 @@ const Location = () => {
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
-                  <p className="text-sandstone gold-glow font-semibold text-lg text-center">
+                <div className="mt-6 md:mt-8 p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
+                  <p className="text-sandstone gold-glow font-semibold text-base md:text-lg text-center">
                     Walk-ins Welcome
                   </p>
-                  <p className="text-muted-foreground text-center mt-2">
+                  <p className="text-muted-foreground text-center mt-2 text-sm md:text-base">
                     Bookings recommended for guaranteed service
                   </p>
                 </div>
