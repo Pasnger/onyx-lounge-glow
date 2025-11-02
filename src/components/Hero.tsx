@@ -20,7 +20,7 @@ const Hero = () => {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0" style={{ transform: `translateY(${scrollY * 0.5}px)` }}>
-        <video autoPlay loop muted playsInline className="w-full h-full object-contain md:object-cover">
+        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
