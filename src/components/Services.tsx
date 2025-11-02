@@ -1,4 +1,4 @@
-import { Scissors, Sparkles, User, Baby, Users } from "lucide-react";
+import { Scissors, Sparkles, User, Baby, Users, Info } from "lucide-react";
 import { useScrollReveal, getRevealClass } from "@/hooks/useScrollReveal";
 
 const Services = () => {
@@ -34,6 +34,12 @@ const Services = () => {
       price: "$35",
       description: "Special pricing for senior clients",
     },
+    {
+      icon: Info,
+      title: "Age Requirements",
+      price: "",
+      description: "Kids pricing applies to children 12 and under. Seniors pricing available for guests 60 and above. Special rates apply to any haircut service.",
+    },
   ];
 
   return (
@@ -67,9 +73,11 @@ const Services = () => {
                 <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
                   {service.title}
                 </h3>
-                <p className="text-3xl font-bold text-sandstone gold-glow group-hover:text-neon-blue group-hover:neon-glow-subtle mb-4 transition-all duration-300">
-                  {service.price}
-                </p>
+                {service.price && (
+                  <p className="text-3xl font-bold text-sandstone gold-glow group-hover:text-neon-blue group-hover:neon-glow-subtle mb-4 transition-all duration-300">
+                    {service.price}
+                  </p>
+                )}
                 <p className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
