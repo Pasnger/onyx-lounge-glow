@@ -11,7 +11,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 const Reviews = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({
-    threshold: 0.2,
+    threshold: 0.3,
     triggerOnce: true,
   });
 
