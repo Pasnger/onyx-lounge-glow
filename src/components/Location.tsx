@@ -39,16 +39,6 @@ const Location = () => {
                 </p>
               </div>
             </div>
-
-            <div className="p-4 bg-card rounded-lg border-2 border-sandstone/30 shadow-soft-dark hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
-              <p className="text-muted-foreground text-sm mb-2">Prefer to call?</p>
-              <a 
-                href="tel:0419861501" 
-                className="text-lg font-semibold text-sandstone gold-glow hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300"
-              >
-                0419 861 501
-              </a>
-            </div>
             
             {/* Google Map Embed */}
             <div className="aspect-video rounded-lg overflow-hidden border-2 border-sandstone hover:border-neon-blue shadow-gold hover:shadow-neon-blue transition-all duration-300">
@@ -62,6 +52,16 @@ const Location = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Onyx Barber Lounge Location"
               ></iframe>
+            </div>
+
+            <div className="p-4 bg-card rounded-lg border-2 border-sandstone/30 shadow-soft-dark hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
+              <p className="text-muted-foreground text-sm mb-2">Prefer to call?</p>
+              <a 
+                href="tel:0419861501" 
+                className="text-lg font-semibold text-sandstone gold-glow hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300"
+              >
+                0419 861 501
+              </a>
             </div>
           </div>
 
