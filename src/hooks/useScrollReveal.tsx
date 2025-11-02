@@ -43,17 +43,17 @@ export const getRevealClass = (isVisible: boolean, variant: "fade-up" | "fade-sc
   
   const variants = {
     "fade-up": isVisible 
-      ? "opacity-100 translate-y-0 scale-100 blur-0" 
-      : "opacity-0 translate-y-16 scale-95 blur-sm",
+      ? "opacity-100 translate-y-0 scale-100" 
+      : "opacity-0 translate-y-16 scale-95",
     "fade-scale": isVisible 
-      ? "opacity-100 scale-100 blur-0" 
-      : "opacity-0 scale-90 blur-md",
+      ? "opacity-100 scale-100" 
+      : "opacity-0 scale-90",
     "slide-left": isVisible 
-      ? "opacity-100 translate-x-0 blur-0" 
-      : "opacity-0 -translate-x-16 blur-sm",
+      ? "opacity-100 translate-x-0" 
+      : "opacity-0 -translate-x-16",
     "slide-right": isVisible 
-      ? "opacity-100 translate-x-0 blur-0" 
-      : "opacity-0 translate-x-16 blur-sm",
+      ? "opacity-100 translate-x-0" 
+      : "opacity-0 translate-x-16",
   };
   
   return `${baseTransition} ${delayClass} ${variants[variant]}`;
