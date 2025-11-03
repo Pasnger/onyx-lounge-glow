@@ -27,7 +27,7 @@ const Location = () => {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           {/* Map */}
-          <div ref={mapRef} className={`space-y-6 ${getRevealClass(mapVisible, "slide-left")}`}>
+          <div ref={mapRef} className={`space-y-6 md:flex md:flex-col ${getRevealClass(mapVisible, "slide-left")}`}>
             <div className="flex items-start gap-4">
               <MapPin className="w-6 h-6 text-sandstone gold-glow mt-1 flex-shrink-0 hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300" />
               <div>
@@ -62,7 +62,7 @@ const Location = () => {
               </div>
             </a>
 
-            <div className="mt-6 md:mt-8 p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
+            <div className="mt-6 md:mt-auto p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
               <p className="text-sandstone gold-glow font-semibold text-base md:text-lg text-center">
                 Prefer to call?
               </p>
@@ -78,7 +78,7 @@ const Location = () => {
           </div>
 
           {/* Hours */}
-          <div ref={hoursRef} className={`space-y-6 ${getRevealClass(hoursVisible, "slide-right")}`}>
+          <div ref={hoursRef} className={`space-y-6 md:flex md:flex-col ${getRevealClass(hoursVisible, "slide-right")}`}>
             <div className="flex items-start gap-4">
               <Clock className="w-6 h-6 text-sandstone gold-glow mt-1 flex-shrink-0 hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300" />
               <div className="flex-1">
@@ -102,7 +102,7 @@ const Location = () => {
                   ))}
                 </div>
 
-                <div className="mt-6 md:mt-8 p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
+                <div className="mt-6 md:mt-auto p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
                   <p className="text-sandstone gold-glow font-semibold text-base md:text-lg text-center">
                     Walk-ins Welcome
                   </p>
