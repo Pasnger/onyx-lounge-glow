@@ -68,10 +68,10 @@ const Location = () => {
               <p className="text-sandstone gold-glow font-semibold text-base md:text-lg text-center">
                 Prefer to call?
               </p>
-              <p className="text-muted-foreground text-center mt-2">
+              <p className="text-muted-foreground text-center mt-2 text-sm md:text-base">
                 <a 
                   href="tel:0419861501" 
-                  className="hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300 text-base md:text-lg"
+                  className="hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300"
                 >
                   0419 861 501
                 </a>
