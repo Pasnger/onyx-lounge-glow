@@ -81,9 +81,9 @@ const Location = () => {
 
           {/* Hours */}
           <div ref={hoursRef} className={`space-y-6 md:flex md:flex-col md:h-full ${getRevealClass(hoursVisible, "slide-right")}`}>
-            <div className="flex flex-col md:flex-row items-center md:items-start md:items-stretch md:flex-1 gap-4 h-full">
-              <Clock className="w-6 h-6 text-sandstone gold-glow flex-shrink-0 hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300 md:mt-1" />
-              <div className="flex-1 flex flex-col min-h-full w-full">
+            <div className="flex items-start md:items-stretch md:flex-1 gap-4 h-full">
+              <Clock className="w-6 h-6 text-sandstone gold-glow mt-1 flex-shrink-0 hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300" />
+              <div className="flex-1 flex flex-col min-h-full">
                 <h3 className="text-xl font-heading font-bold mb-6 text-foreground">Opening Hours</h3>
                 
                 <div className="space-y-3">
