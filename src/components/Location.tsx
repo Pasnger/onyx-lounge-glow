@@ -27,7 +27,7 @@ const Location = () => {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           {/* Map */}
-          <div ref={mapRef} className={`space-y-6 md:flex md:flex-col ${getRevealClass(mapVisible, "slide-left")}`}>
+          <div ref={mapRef} className={`space-y-6 md:flex md:flex-col md:h-full ${getRevealClass(mapVisible, "slide-left")}`}>
             <div className="flex items-start gap-4">
               <MapPin className="w-6 h-6 text-sandstone gold-glow mt-1 flex-shrink-0 hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300" />
               <div>
@@ -78,10 +78,10 @@ const Location = () => {
           </div>
 
           {/* Hours */}
-          <div ref={hoursRef} className={`space-y-6 md:flex md:flex-col ${getRevealClass(hoursVisible, "slide-right")}`}>
-            <div className="flex items-start gap-4">
+          <div ref={hoursRef} className={`space-y-6 md:flex md:flex-col md:h-full ${getRevealClass(hoursVisible, "slide-right")}`}>
+            <div className="flex items-start md:items-stretch md:flex-1 gap-4 h-full">
               <Clock className="w-6 h-6 text-sandstone gold-glow mt-1 flex-shrink-0 hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300" />
-              <div className="flex-1">
+              <div className="flex-1 flex flex-col min-h-full">
                 <h3 className="text-xl font-heading font-bold mb-6 text-foreground">Opening Hours</h3>
                 
                 <div className="space-y-3">
