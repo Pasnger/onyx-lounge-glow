@@ -1,11 +1,11 @@
 import { Instagram } from "lucide-react";
 import { useScrollReveal, getRevealClass } from "@/hooks/useScrollReveal";
-import haircut1 from "@/assets/haircut-1.png";
-import haircut2 from "@/assets/haircut-2.png";
-import haircut3 from "@/assets/haircut-3.png";
-import haircut4 from "@/assets/haircut-4.png";
-import haircut5 from "@/assets/haircut-5.png";
-import haircut6 from "@/assets/haircut-6.png";
+import haircut1 from "@/assets/haircut-1.jpg";
+import haircut2 from "@/assets/haircut-2.jpg";
+import haircut3 from "@/assets/haircut-3.jpg";
+import haircut4 from "@/assets/haircut-4.jpg";
+import haircut5 from "@/assets/haircut-5.jpg";
+import haircut6 from "@/assets/haircut-6.jpg";
 
 const Gallery = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal({ threshold: 0.3 });
