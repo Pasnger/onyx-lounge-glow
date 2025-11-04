@@ -54,8 +54,9 @@ const Lounge = () => {
           ref={headerRef}
           className={`text-center mb-16 ${getRevealClass(headerVisible, "fade-up")}`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sandstone via-neon-gold to-sandstone bg-clip-text text-transparent">
-            Step Inside The Lounge
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-foreground">Step Inside </span>
+            <span className="bg-gradient-to-r from-sandstone via-neon-gold to-sandstone bg-clip-text text-transparent">The Lounge</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A premium space designed for the modern gentleman. Experience luxury grooming in an atmosphere of sophistication and style.
