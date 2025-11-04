@@ -51,12 +51,13 @@ const Lounge = () => {
         {/* Carousel */}
         <div
           ref={carouselRef}
-          className={`max-w-5xl mx-auto ${getRevealClass(carouselVisible, "fade-scale")}`}
+          className={`max-w-7xl mx-auto px-16 ${getRevealClass(carouselVisible, "fade-scale")}`}
         >
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
+              slidesToScroll: 1,
             }}
             plugins={[
               Autoplay({
@@ -66,25 +67,27 @@ const Lounge = () => {
             ]}
             className="w-full"
           >
-            <CarouselContent>
-              {images.map((image) => (
-                <CarouselItem key={image.id}>
-                  <div className="p-1">
-                    <div className="relative overflow-hidden rounded-lg border-2 border-sandstone/20 hover:border-neon-blue/50 transition-all duration-300 shadow-lg hover:shadow-neon-gold/20">
+            <CarouselContent className="-ml-4">
+              {images.map((image, index) => (
+                <CarouselItem key={image.id} className="pl-4 basis-[85%] md:basis-3/4 lg:basis-2/3">
+                  <div className="p-2 transition-all duration-500">
+                    <div className="relative overflow-hidden rounded-lg border-2 border-sandstone/30 shadow-2xl transition-all duration-500 hover:shadow-neon-gold/30 group">
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 hover:scale-105"
+                        className="w-full h-[350px] md:h-[450px] lg:h-[550px] object-cover transition-all duration-700 group-hover:scale-105"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                      {/* Premium glow overlay for center slide */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-0 ring-2 ring-neon-gold/0 group-hover:ring-neon-gold/50 rounded-lg transition-all duration-500" />
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4 bg-background/80 hover:bg-sandstone/20 border-sandstone/50 hover:border-neon-gold" />
-            <CarouselNext className="right-4 bg-background/80 hover:bg-sandstone/20 border-sandstone/50 hover:border-neon-gold" />
+            <CarouselPrevious className="-left-12 md:-left-16 bg-background/90 hover:bg-sandstone/30 border-sandstone/50 hover:border-neon-gold hover:shadow-lg hover:shadow-neon-gold/20 transition-all" />
+            <CarouselNext className="-right-12 md:-right-16 bg-background/90 hover:bg-sandstone/30 border-sandstone/50 hover:border-neon-gold hover:shadow-lg hover:shadow-neon-gold/20 transition-all" />
           </Carousel>
         </div>
       </div>
