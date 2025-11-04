@@ -34,16 +34,14 @@ const About = () => {
           {/* Image Placeholder */}
           <div ref={imageRef} className={`relative mirror-glow ${getRevealClass(imageVisible, "slide-right")}`}>
             <div className="aspect-[4/5] concrete-texture rounded-lg overflow-hidden shadow-soft-dark border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center space-y-4 p-8">
-                  <div className="w-20 h-20 mx-auto bg-sandstone/10 rounded-full flex items-center justify-center shadow-gold">
-                    <svg className="w-10 h-10 text-sandstone" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <p className="text-muted-foreground">Video about Onyx story and vision will be displayed here</p>
-                </div>
-              </div>
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                preload="metadata"
+              >
+                <source src="/onyx-about.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
             {/* Decorative Border */}
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-sandstone/20 rounded-lg -z-10"></div>
