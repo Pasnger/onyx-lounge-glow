@@ -86,7 +86,7 @@ const Location = () => {
               <div className="flex-1 flex flex-col min-h-full">
                 <h3 className="text-xl font-heading font-bold mb-6 text-foreground">Opening Hours</h3>
                 
-                <div className="space-y-3 max-w-md mx-auto md:mx-0 md:max-w-none">
+                <div className="space-y-3 mx-4 md:mx-0">
                   {hours.map((item) => (
                     <div
                       key={item.day}
@@ -104,7 +104,7 @@ const Location = () => {
                   ))}
                 </div>
 
-                <div className="mt-6 md:mt-auto p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300 max-w-md mx-auto md:mx-0 md:max-w-none">
+                <div className="mt-6 md:mt-auto p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300 mx-4 md:mx-0">
                   <p className="text-sandstone gold-glow font-semibold text-base md:text-lg text-center">
                     Walk-ins Welcome
                   </p>
