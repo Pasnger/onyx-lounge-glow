@@ -92,7 +92,7 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="py-20 px-4 section-gradient relative overflow-hidden">
+    <section className="py-12 md:py-20 px-4 section-gradient relative overflow-hidden">
       {/* Review Schema Markup */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       
@@ -108,13 +108,13 @@ const Reviews = () => {
           ref={headerRef}
           className={getRevealClass(headerVisible, "fade-scale")}
         >
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="text-sm font-semibold text-muted-foreground tracking-wider uppercase">
                 Google Reviews
               </span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
               What Our <span className="text-sandstone gold-glow">Clients</span> Say
             </h2>
             <div className="flex items-center justify-center gap-2 mb-6">
@@ -154,7 +154,7 @@ const Reviews = () => {
               {reviews.map((review, index) => (
                 <CarouselItem
                   key={review.id}
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
+                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
                 >
                   <div className="h-full">
                     <div className={`concrete-texture rounded-lg p-6 border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300 shadow-soft-dark hover:shadow-soft h-full flex flex-col group ${getRevealClass(carouselVisible, "fade-up")}`} style={{ transitionDelay: `${index * 100}ms` }}>
@@ -194,8 +194,8 @@ const Reviews = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 bg-concrete-texture border-sandstone/30 hover:border-neon-blue hover:bg-neon-blue/10" />
-            <CarouselNext className="hidden md:flex -right-12 bg-concrete-texture border-sandstone/30 hover:border-neon-blue hover:bg-neon-blue/10" />
+            <CarouselPrevious className="-left-8 md:-left-12 bg-concrete-texture border-sandstone/30 hover:border-neon-blue hover:bg-neon-blue/10 h-10 w-10 md:h-12 md:w-12" />
+            <CarouselNext className="-right-8 md:-right-12 bg-concrete-texture border-sandstone/30 hover:border-neon-blue hover:bg-neon-blue/10 h-10 w-10 md:h-12 md:w-12" />
           </Carousel>
         </div>
 

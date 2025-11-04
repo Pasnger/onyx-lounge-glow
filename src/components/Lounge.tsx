@@ -44,7 +44,7 @@ const Lounge = () => {
   ];
 
   return (
-    <section className="py-20 bg-concrete relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-concrete relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-sandstone/5 via-transparent to-sandstone/5" />
       
@@ -52,9 +52,9 @@ const Lounge = () => {
         {/* Header */}
         <div
           ref={headerRef}
-          className={`text-center mb-16 ${getRevealClass(headerVisible, "fade-up")}`}
+          className={`text-center mb-12 md:mb-16 ${getRevealClass(headerVisible, "fade-up")}`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <span className="text-foreground">Step Inside </span>
             <span className="bg-gradient-to-r from-sandstone via-neon-gold to-sandstone bg-clip-text text-transparent">The Lounge</span>
           </h2>
@@ -88,7 +88,7 @@ const Lounge = () => {
                 const isActive = index === activeIndex;
                 return (
                   <CarouselItem key={image.id} className="pl-4 basis-[85%] md:basis-3/4 lg:basis-2/3">
-                    <div className={`p-2 transition-all duration-700 ${isActive ? 'scale-100 opacity-100' : 'scale-90 md:scale-95 opacity-60 md:opacity-75'}`}>
+                    <div className={`p-2 transition-all duration-700 ${isActive ? 'scale-100 opacity-100' : 'scale-95 opacity-80 md:scale-90 md:opacity-70'}`}>
                       <div className={`relative overflow-hidden rounded-lg border-2 transition-all duration-700 group ${isActive ? 'border-sandstone/50 shadow-2xl shadow-neon-gold/20' : 'border-sandstone/20 shadow-lg'}`}>
                         <img
                           src={image.src}

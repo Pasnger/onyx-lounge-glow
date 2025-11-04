@@ -20,10 +20,10 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-24 section-gradient">
+    <section id="gallery" className="py-12 md:py-20 section-gradient">
       <div className="container mx-auto px-4">
-        <div ref={headerRef} className={`text-center mb-16 ${getRevealClass(headerVisible, "fade-scale")}`}>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
+        <div ref={headerRef} className={`text-center mb-12 md:mb-16 ${getRevealClass(headerVisible, "fade-scale")}`}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
             Our <span className="text-sandstone gold-glow">Work</span>
           </h2>
           <div className="w-20 h-1 bg-sandstone shadow-gold mx-auto mb-6"></div>
@@ -52,7 +52,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {images.map((image, idx) => (
             <div
               key={image.id}
