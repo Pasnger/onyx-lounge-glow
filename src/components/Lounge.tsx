@@ -102,7 +102,7 @@ const Lounge = () => {
                         />
                         {/* Premium glow overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className={`absolute inset-0 ring-2 rounded-lg transition-all duration-700 ${isActive ? 'md:ring-neon-gold/30' : 'ring-transparent'} group-hover:ring-neon-gold/50`} />
+                        <div className={`absolute inset-0 ring-2 rounded-lg transition-all duration-700 ${isActive ? 'md:ring-neon-gold/30' : 'ring-transparent'} group-hover:md:ring-neon-gold/50`} />
                       </div>
                     </div>
                   </CarouselItem>
