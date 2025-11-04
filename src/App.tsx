@@ -18,7 +18,7 @@ const App = () => (
 
       {/* Global concrete background + text color */}
       <div className="min-h-screen bg-concrete text-foreground">
-        <BrowserRouter>
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Routes>
             <Route path="/" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
