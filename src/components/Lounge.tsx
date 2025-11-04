@@ -83,17 +83,17 @@ const Lounge = () => {
             ]}
             className="w-full"
           >
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="-ml-0 md:-ml-4">
               {images.map((image, index) => {
                 const isActive = index === activeIndex;
                 return (
-                  <CarouselItem key={image.id} className="pl-4 basis-[90%] md:basis-3/4 lg:basis-2/3">
-                    <div className={`p-2 transition-all duration-700 ${isActive ? 'scale-100 opacity-100' : 'scale-100 opacity-80 md:scale-95 md:opacity-75'}`}>
-                      <div className={`relative overflow-hidden rounded-lg border-2 transition-all duration-700 group bg-background/50 md:bg-transparent ${isActive ? 'border-sandstone/50 shadow-2xl shadow-neon-gold/20' : 'border-sandstone/20 shadow-lg'}`}>
+                  <CarouselItem key={image.id} className="pl-0 md:pl-4 basis-full md:basis-3/4 lg:basis-2/3">
+                    <div className={`p-0 md:p-2 transition-all duration-700 ${isActive ? 'scale-100 opacity-100' : 'scale-100 opacity-80 md:scale-95 md:opacity-75'}`}>
+                      <div className={`relative overflow-hidden rounded-none md:rounded-lg border-0 md:border-2 transition-all duration-700 group bg-transparent ${isActive ? 'md:border-sandstone/50 md:shadow-2xl md:shadow-neon-gold/20' : 'md:border-sandstone/20 md:shadow-lg'}`}>
                         <img
                           src={image.src}
                           alt={image.alt}
-                          className="w-full h-[400px] md:h-[450px] lg:h-[550px] object-contain md:object-cover transition-all duration-700 group-hover:scale-105"
+                          className="w-full aspect-[4/3] md:aspect-auto md:h-[450px] lg:h-[550px] object-cover transition-all duration-700 group-hover:scale-105"
                           loading={index < 3 ? "eager" : "lazy"}
                           decoding="async"
                           width="800"
@@ -102,7 +102,7 @@ const Lounge = () => {
                         />
                         {/* Premium glow overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className={`absolute inset-0 ring-2 rounded-lg transition-all duration-700 ${isActive ? 'md:ring-neon-gold/30' : 'ring-transparent'} group-hover:md:ring-neon-gold/50`} />
+                        <div className={`absolute inset-0 ring-0 md:ring-2 rounded-lg transition-all duration-700 ${isActive ? 'md:ring-neon-gold/30' : 'ring-transparent'} group-hover:md:ring-neon-gold/50`} />
                       </div>
                     </div>
                   </CarouselItem>
