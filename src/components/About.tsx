@@ -26,7 +26,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="py-12 md:py-20 section-gradient relative overflow-hidden">
+    <section id="about" className="py-24 section-gradient relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-sandstone/5 to-transparent"></div>
       
@@ -34,7 +34,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div ref={textRef} className={`space-y-6 ${getRevealClass(textVisible, "slide-left")}`}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground">
               Welcome to <span className="text-sandstone gold-glow">Onyx</span>
             </h2>
             <div className="w-20 h-1 bg-sandstone shadow-gold"></div>

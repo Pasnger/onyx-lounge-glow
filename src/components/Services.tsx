@@ -127,13 +127,13 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-12 md:py-20 bg-concrete-medium relative">
+    <section id="services" className="py-24 bg-concrete-medium relative">
       {/* Service Schema Markup */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       
       <div className="container mx-auto px-4">
-        <div ref={headerRef} className={`text-center mb-12 md:mb-16 ${getRevealClass(headerVisible, "fade-scale")}`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
+        <div ref={headerRef} className={`text-center mb-16 ${getRevealClass(headerVisible, "fade-scale")}`}>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-foreground">
             Our <span className="text-sandstone gold-glow">Services</span>
           </h2>
           <div className="w-20 h-1 bg-sandstone shadow-gold mx-auto mb-6"></div>
@@ -149,16 +149,16 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className={`group relative bg-card rounded-lg p-6 md:p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 shadow-gold hover:shadow-neon-blue ${getRevealClass(cardsVisible, "fade-up")}`}
+                className={`group relative bg-card rounded-lg p-8 border-2 border-sandstone/40 hover:border-neon-blue transition-all duration-300 shadow-gold hover:shadow-neon-blue ${getRevealClass(cardsVisible, "fade-up")}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {/* Icon */}
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-sandstone/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-neon-blue/20 transition-all duration-300 shadow-gold group-hover:shadow-neon-blue">
-                  <Icon className="w-7 h-7 md:w-8 md:h-8 text-sandstone group-hover:text-neon-blue transition-colors duration-300" />
+                <div className="w-16 h-16 bg-sandstone/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-neon-blue/20 transition-all duration-300 shadow-gold group-hover:shadow-neon-blue">
+                  <Icon className="w-8 h-8 text-sandstone group-hover:text-neon-blue transition-colors duration-300" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-2">
+                <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
                   {service.title}
                 </h3>
                 {service.price && (

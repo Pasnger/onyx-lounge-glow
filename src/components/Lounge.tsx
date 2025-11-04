@@ -44,7 +44,7 @@ const Lounge = () => {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-concrete relative overflow-hidden">
+    <section className="py-20 bg-concrete relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-sandstone/5 via-transparent to-sandstone/5" />
       
@@ -52,9 +52,9 @@ const Lounge = () => {
         {/* Header */}
         <div
           ref={headerRef}
-          className={`text-center mb-12 md:mb-16 ${getRevealClass(headerVisible, "fade-up")}`}
+          className={`text-center mb-16 ${getRevealClass(headerVisible, "fade-up")}`}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="text-foreground">Step Inside </span>
             <span className="bg-gradient-to-r from-sandstone via-neon-gold to-sandstone bg-clip-text text-transparent">The Lounge</span>
           </h2>
@@ -66,7 +66,7 @@ const Lounge = () => {
         {/* Carousel */}
         <div
           ref={carouselRef}
-          className={`max-w-7xl mx-auto px-0 md:px-16 ${getRevealClass(carouselVisible, "fade-scale")}`}
+          className={`max-w-7xl mx-auto px-16 ${getRevealClass(carouselVisible, "fade-scale")}`}
         >
           <Carousel
             setApi={setApi}
@@ -87,17 +87,17 @@ const Lounge = () => {
               {images.map((image, index) => {
                 const isActive = index === activeIndex;
                 return (
-                  <CarouselItem key={image.id} className="pl-4 basis-full md:basis-[85%] lg:basis-3/4 xl:basis-2/3">
-                    <div className={`p-1 md:p-2 transition-all duration-700 ${isActive ? 'scale-100 opacity-100' : 'scale-95 opacity-80 md:scale-90 md:opacity-70'}`}>
-                      <div className={`relative overflow-hidden rounded-lg border-2 transition-all duration-700 group bg-gradient-to-b from-background/30 to-background/50 ${isActive ? 'border-sandstone/50 shadow-2xl shadow-neon-gold/20' : 'border-sandstone/20 shadow-lg'}`}>
+                  <CarouselItem key={image.id} className="pl-4 basis-[85%] md:basis-3/4 lg:basis-2/3">
+                    <div className={`p-2 transition-all duration-700 ${isActive ? 'scale-100 opacity-100' : 'scale-90 md:scale-95 opacity-60 md:opacity-75'}`}>
+                      <div className={`relative overflow-hidden rounded-lg border-2 transition-all duration-700 group ${isActive ? 'border-sandstone/50 shadow-2xl shadow-neon-gold/20' : 'border-sandstone/20 shadow-lg'}`}>
                         <img
                           src={image.src}
                           alt={image.alt}
-                          className="w-full h-[450px] md:h-[500px] lg:h-[600px] object-contain transition-all duration-700 group-hover:scale-105"
+                          className="w-full h-[350px] md:h-[450px] lg:h-[550px] object-cover transition-all duration-700 group-hover:scale-105"
                           loading={index < 3 ? "eager" : "lazy"}
                           decoding="async"
                           width="800"
-                          height="600"
+                          height="550"
                           style={{ willChange: isActive ? 'transform' : 'auto' }}
                         />
                         {/* Premium glow overlay */}
@@ -109,8 +109,8 @@ const Lounge = () => {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 md:-left-16 bg-background/90 hover:bg-sandstone/30 border-sandstone/50 hover:border-neon-gold hover:shadow-lg hover:shadow-neon-gold/20 transition-all" />
-            <CarouselNext className="hidden md:flex -right-12 md:-right-16 bg-background/90 hover:bg-sandstone/30 border-sandstone/50 hover:border-neon-gold hover:shadow-lg hover:shadow-neon-gold/20 transition-all" />
+            <CarouselPrevious className="-left-12 md:-left-16 bg-background/90 hover:bg-sandstone/30 border-sandstone/50 hover:border-neon-gold hover:shadow-lg hover:shadow-neon-gold/20 transition-all" />
+            <CarouselNext className="-right-12 md:-right-16 bg-background/90 hover:bg-sandstone/30 border-sandstone/50 hover:border-neon-gold hover:shadow-lg hover:shadow-neon-gold/20 transition-all" />
           </Carousel>
         </div>
       </div>

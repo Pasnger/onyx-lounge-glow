@@ -14,14 +14,14 @@ const Footer = () => {
   return (
     <footer id="contact" className="dark border-t border-sandstone/30">
       {/* CTA Section */}
-      <div className="py-12 md:py-20 bg-gradient-to-b from-onyx to-concrete-medium">
+      <div className="py-20 bg-gradient-to-b from-onyx to-concrete-medium">
         <div ref={ctaRef} className={`container mx-auto px-4 text-center ${getRevealClass(ctaVisible, "fade-scale")}`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
             Step into <span className="text-sandstone gold-glow">Style</span>.
             <br />
             Step into <span className="text-sandstone gold-glow">Onyx</span>.
           </h2>
-          <p className="text-lg md:text-xl text-concrete-light mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-concrete-light mb-8 max-w-2xl mx-auto">
             Book your next cut and experience precision grooming in South Australia's premier barber lounge
           </p>
           <Button
