@@ -49,11 +49,11 @@ const Hero = () => {
         <h1 className="sr-only">Onyx Barber Lounge | Premium Men's Grooming in Paradise, South Australia</h1>
         
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center animate-slide-up">
+        <div className="flex flex-row gap-4 justify-center animate-slide-up">
           <Button
             asChild
             size="lg"
-            className="bg-sandstone hover:bg-neon-blue shadow-gold hover:shadow-neon-blue w-full sm:w-auto min-h-[44px]"
+            className="bg-sandstone hover:bg-neon-blue shadow-gold hover:shadow-neon-blue min-h-[44px]"
           >
             <a href="https://onyxlounge.booksy.com/a/" target="_blank" rel="noopener noreferrer">
               Book a Cut
@@ -63,7 +63,7 @@ const Hero = () => {
             onClick={() => scrollToSection("about")}
             size="lg"
             variant="outline"
-            className="border-sandstone text-sandstone hover:border-neon-blue hover:text-neon-blue hover:bg-neon-blue/10 w-full sm:w-auto min-h-[44px]"
+            className="border-sandstone text-sandstone hover:border-neon-blue hover:text-neon-blue hover:bg-neon-blue/10 min-h-[44px]"
           >
             Explore the Lounge
           </Button>
