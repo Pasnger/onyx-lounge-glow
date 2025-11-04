@@ -1,12 +1,15 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Lounge from "@/components/Lounge";
-import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
-import Reviews from "@/components/Reviews";
-import Location from "@/components/Location";
-import Footer from "@/components/Footer";
+
+// Lazy load below-the-fold components
+const Services = lazy(() => import("@/components/Services"));
+const Reviews = lazy(() => import("@/components/Reviews"));
+const Location = lazy(() => import("@/components/Location"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
@@ -16,10 +19,12 @@ const Index = () => {
       <About />
       <Lounge />
       <Gallery />
-      <Services />
-      <Reviews />
-      <Location />
-      <Footer />
+      <Suspense fallback={<div className="h-96" />}>
+        <Services />
+        <Reviews />
+        <Location />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

@@ -94,7 +94,11 @@ const Lounge = () => {
                           src={image.src}
                           alt={image.alt}
                           className="w-full h-[350px] md:h-[450px] lg:h-[550px] object-cover transition-all duration-700 group-hover:scale-105"
-                          loading="lazy"
+                          loading={index < 3 ? "eager" : "lazy"}
+                          decoding="async"
+                          width="800"
+                          height="550"
+                          style={{ willChange: isActive ? 'transform' : 'auto' }}
                         />
                         {/* Premium glow overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

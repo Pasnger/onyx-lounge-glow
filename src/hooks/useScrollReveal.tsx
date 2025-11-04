@@ -15,20 +15,30 @@ export const useScrollReveal = (options: ScrollRevealOptions = {}) => {
     const element = ref.current;
     if (!element) return;
 
+    let timeoutId: NodeJS.Timeout;
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else if (!triggerOnce) {
-          setIsVisible(false);
-        }
+        // Debounce visibility changes
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else if (!triggerOnce) {
+            setIsVisible(false);
+          }
+        }, 50);
       },
-      { threshold, rootMargin }
+      { 
+        threshold, 
+        rootMargin: rootMargin || "50px" // Trigger slightly before entering viewport
+      }
     );
 
     observer.observe(element);
 
     return () => {
+      clearTimeout(timeoutId);
       observer.disconnect();
     };
   }, [threshold, rootMargin, triggerOnce]);

@@ -6,8 +6,17 @@ const Hero = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -19,8 +28,16 @@ const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <div className="absolute inset-0 z-0" style={{ transform: `translateY(${scrollY * 0.5}px)` }}>
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+      <div className="absolute inset-0 z-0" style={{ transform: `translateY(${scrollY * 0.5}px)`, willChange: 'transform' }}>
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          preload="auto"
+          className="w-full h-full object-cover"
+          style={{ willChange: 'transform' }}
+        >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero-overlay)" }} />
