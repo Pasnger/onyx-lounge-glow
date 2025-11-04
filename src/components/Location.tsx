@@ -104,7 +104,7 @@ const Location = () => {
                   ))}
                 </div>
 
-                <div className="mt-6 md:mt-auto p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300 max-w-md mx-auto md:mx-0">
+                <div className="mt-6 md:mt-auto p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300 w-full max-w-md self-center md:self-stretch md:max-w-none">
                   <p className="text-sandstone gold-glow font-semibold text-base md:text-lg text-center">
                     Walk-ins Welcome
                   </p>
