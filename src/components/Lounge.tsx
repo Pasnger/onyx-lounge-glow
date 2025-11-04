@@ -112,6 +112,22 @@ const Lounge = () => {
             <CarouselPrevious className="hidden md:flex -left-12 md:-left-16 bg-background/90 hover:bg-sandstone/30 border-sandstone/50 hover:border-neon-gold hover:shadow-lg hover:shadow-neon-gold/20 transition-all" />
             <CarouselNext className="hidden md:flex -right-12 md:-right-16 bg-background/90 hover:bg-sandstone/30 border-sandstone/50 hover:border-neon-gold hover:shadow-lg hover:shadow-neon-gold/20 transition-all" />
           </Carousel>
+
+          {/* Carousel Indicators */}
+          <div className="flex justify-center gap-2 mt-6 md:mt-8">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  index === activeIndex
+                    ? 'w-10 h-2.5 bg-gradient-to-r from-sandstone via-neon-gold to-sandstone shadow-lg shadow-neon-gold/30'
+                    : 'w-2.5 h-2.5 bg-sandstone/20 hover:bg-sandstone/40 border border-sandstone/30'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
