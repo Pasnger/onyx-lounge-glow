@@ -1,12 +1,6 @@
 import { Star } from "lucide-react";
 import { useScrollReveal, getRevealClass } from "@/hooks/useScrollReveal";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 const Reviews = () => {
@@ -22,14 +16,14 @@ const Reviews = () => {
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Onyx Barber Lounge",
-    "aggregateRating": {
+    name: "Onyx Barber Lounge",
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "8",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
+      ratingValue: "5.0",
+      reviewCount: "8",
+      bestRating: "5",
+      worstRating: "1",
+    },
   };
 
   const reviews = [
@@ -95,7 +89,7 @@ const Reviews = () => {
     <section className="py-20 px-4 section-gradient relative overflow-hidden">
       {/* Review Schema Markup */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
-      
+
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-sandstone rounded-full blur-3xl"></div>
@@ -104,10 +98,7 @@ const Reviews = () => {
 
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
-        <div
-          ref={headerRef}
-          className={getRevealClass(headerVisible, "fade-scale")}
-        >
+        <div ref={headerRef} className={getRevealClass(headerVisible, "fade-scale")}>
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="text-sm font-semibold text-muted-foreground tracking-wider uppercase">
@@ -120,24 +111,18 @@ const Reviews = () => {
             <div className="flex items-center justify-center gap-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-6 h-6 fill-yellow-500 text-yellow-500"
-                  />
+                  <Star key={i} className="w-6 h-6 fill-yellow-500 text-yellow-500" />
                 ))}
               </div>
               <span className="text-lg font-semibold text-foreground">5.0</span>
-              <span className="text-muted-foreground">({reviews.length} reviews)</span>
+              <span className="text-muted-foreground">(200+ reviews)</span>
             </div>
             <div className="w-32 h-1 bg-gradient-to-r from-transparent via-sandstone to-transparent mx-auto"></div>
           </div>
         </div>
 
         {/* Carousel */}
-        <div
-          ref={carouselRef}
-          className={getRevealClass(carouselVisible, "fade-up")}
-        >
+        <div ref={carouselRef} className={getRevealClass(carouselVisible, "fade-up")}>
           <Carousel
             opts={{
               align: "start",
@@ -152,20 +137,17 @@ const Reviews = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {reviews.map((review, index) => (
-                <CarouselItem
-                  key={review.id}
-                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3"
-                >
+                <CarouselItem key={review.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="h-full">
-                    <div className={`concrete-texture rounded-lg p-6 border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300 shadow-soft-dark hover:shadow-soft h-full flex flex-col group ${getRevealClass(carouselVisible, "fade-up")}`} style={{ transitionDelay: `${index * 100}ms` }}>
+                    <div
+                      className={`concrete-texture rounded-lg p-6 border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300 shadow-soft-dark hover:shadow-soft h-full flex flex-col group ${getRevealClass(carouselVisible, "fade-up")}`}
+                      style={{ transitionDelay: `${index * 100}ms` }}
+                    >
                       {/* Header with Stars and Badge */}
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex gap-1">
                           {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="w-4 h-4 fill-yellow-500 text-yellow-500"
-                            />
+                            <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
                           ))}
                         </div>
                         {review.isNew && (
@@ -176,18 +158,12 @@ const Reviews = () => {
                       </div>
 
                       {/* Review Text */}
-                      <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">
-                        "{review.text}"
-                      </p>
+                      <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">"{review.text}"</p>
 
                       {/* Footer with Name and Time */}
                       <div className="flex items-center justify-between pt-4 border-t border-border">
-                        <p className="font-semibold text-foreground">
-                          {review.name}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {review.time}
-                        </p>
+                        <p className="font-semibold text-foreground">{review.name}</p>
+                        <p className="text-sm text-muted-foreground">{review.time}</p>
                       </div>
                     </div>
                   </div>
