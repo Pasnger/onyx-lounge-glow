@@ -81,12 +81,12 @@ const Location = () => {
 
           {/* Hours */}
           <div ref={hoursRef} className={`space-y-6 md:flex md:flex-col md:h-full ${getRevealClass(hoursVisible, "slide-right")}`}>
-            <div className="flex items-start md:items-stretch md:flex-1 gap-4 h-full">
-              <Clock className="w-6 h-6 text-sandstone gold-glow mt-1 flex-shrink-0 hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300" />
-              <div className="flex-1 flex flex-col min-h-full">
+            <div className="flex flex-col md:flex-row items-center md:items-start md:items-stretch md:flex-1 md:gap-4 h-full">
+              <Clock className="w-6 h-6 text-sandstone gold-glow mt-1 flex-shrink-0 hover:text-neon-blue hover:neon-glow-subtle transition-all duration-300 self-start md:self-auto" />
+              <div className="flex-1 flex flex-col min-h-full w-full md:w-auto">
                 <h3 className="text-xl font-heading font-bold mb-6 text-foreground">Opening Hours</h3>
                 
-                <div className="space-y-3">
+                <div className="space-y-3 max-w-md mx-auto md:mx-0 md:max-w-none">
                   {hours.map((item) => (
                     <div
                       key={item.day}
@@ -104,7 +104,7 @@ const Location = () => {
                   ))}
                 </div>
 
-                <div className="mt-6 md:mt-auto p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300">
+                <div className="mt-6 md:mt-auto p-4 md:p-6 bg-card rounded-lg border-2 border-sandstone shadow-gold hover:border-neon-blue hover:shadow-neon-blue transition-all duration-300 max-w-md mx-auto md:mx-0 md:max-w-none">
                   <p className="text-sandstone gold-glow font-semibold text-base md:text-lg text-center">
                     Walk-ins Welcome
                   </p>
