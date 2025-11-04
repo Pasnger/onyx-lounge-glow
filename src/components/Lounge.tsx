@@ -89,7 +89,7 @@ const Lounge = () => {
                 return (
                   <CarouselItem key={image.id} className="pl-4 basis-[90%] md:basis-3/4 lg:basis-2/3">
                     <div className={`p-2 transition-all duration-700 ${isActive ? 'scale-100 opacity-100' : 'scale-100 opacity-80 md:scale-95 md:opacity-75'}`}>
-                      <div className={`relative overflow-hidden rounded-lg border-2 transition-all duration-700 group ${isActive ? 'border-sandstone/50 shadow-2xl shadow-neon-gold/20' : 'border-sandstone/20 shadow-lg'}`}>
+                      <div className={`relative overflow-hidden rounded-lg border-2 transition-all duration-700 group bg-background/50 md:bg-transparent ${isActive ? 'border-sandstone/50 shadow-2xl shadow-neon-gold/20' : 'border-sandstone/20 shadow-lg'}`}>
                         <img
                           src={image.src}
                           alt={image.alt}
@@ -102,7 +102,7 @@ const Lounge = () => {
                         />
                         {/* Premium glow overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className={`absolute inset-0 ring-2 rounded-lg transition-all duration-700 ${isActive ? 'ring-neon-gold/30' : 'ring-transparent'} group-hover:ring-neon-gold/50`} />
+                        <div className={`absolute inset-0 ring-2 rounded-lg transition-all duration-700 ${isActive ? 'md:ring-neon-gold/30' : 'ring-transparent'} group-hover:ring-neon-gold/50`} />
                       </div>
                     </div>
                   </CarouselItem>
