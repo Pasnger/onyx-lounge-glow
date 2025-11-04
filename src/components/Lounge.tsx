@@ -93,7 +93,7 @@ const Lounge = () => {
                         <img
                           src={image.src}
                           alt={image.alt}
-                          className="w-full h-[400px] md:h-[450px] lg:h-[550px] object-cover transition-all duration-700 group-hover:scale-105"
+                          className="w-full h-[400px] md:h-[450px] lg:h-[550px] object-contain md:object-cover transition-all duration-700 group-hover:scale-105"
                           loading={index < 3 ? "eager" : "lazy"}
                           decoding="async"
                           width="800"
