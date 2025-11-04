@@ -33,9 +33,9 @@ const About = () => {
 
           {/* Image Placeholder */}
           <div ref={imageRef} className={`relative mirror-glow ${getRevealClass(imageVisible, "slide-right")}`}>
-            <div className="aspect-[4/5] concrete-texture rounded-lg overflow-hidden shadow-soft-dark border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300">
+            <div className="concrete-texture rounded-lg overflow-hidden shadow-soft-dark border-2 border-sandstone/30 hover:border-neon-blue transition-all duration-300">
               <video 
-                className="w-full h-full object-cover"
+                className="w-full h-auto"
                 controls
                 preload="metadata"
               >
