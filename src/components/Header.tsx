@@ -38,7 +38,7 @@ const Header = () => {
             <img
               src={onyxLogo}
               alt="ONYX Barber Lounge"
-              className="h-32 w-auto transition-all duration-300 gold-glow group-hover:neon-glow-subtle"
+              className="h-16 sm:h-20 md:h-24 lg:h-32 w-auto transition-all duration-300 gold-glow group-hover:neon-glow-subtle"
               style={{
                 mixBlendMode: "screen",
                 filter: "brightness(1.2) contrast(1.1)",
@@ -71,7 +71,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground flex-shrink-0 p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
