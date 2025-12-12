@@ -51,9 +51,10 @@
   }
 
   /* Base body styling */
-  body {
+  html, body {
     @apply text-foreground;
     background-color: hsl(var(--background));
+    overflow-x: hidden;
   }
 }
 
