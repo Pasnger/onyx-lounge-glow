@@ -23,22 +23,22 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-x-hidden ${
         isScrolled ? "bg-[hsl(var(--background)/0.9)] backdrop-blur-md border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 overflow-hidden">
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo */}
           <button
             onClick={() => scrollToSection("about")}
-            className="group"
+            className="group flex-shrink-0"
             aria-label="Onyx Barber Lounge - back to top"
           >
             <img
               src={onyxLogo}
               alt="ONYX Barber Lounge"
-              className="h-32 w-auto transition-all duration-300 gold-glow group-hover:neon-glow-subtle"
+              className="h-16 sm:h-20 md:h-24 lg:h-32 w-auto transition-all duration-300 gold-glow group-hover:neon-glow-subtle"
               style={{
                 mixBlendMode: "screen",
                 filter: "brightness(1.2) contrast(1.1)",
@@ -71,7 +71,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground flex-shrink-0 p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
